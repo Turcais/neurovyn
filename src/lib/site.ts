@@ -44,14 +44,21 @@ export const site = {
     "Bilimle anlarız, birlikte tasarlarız. İnsanı anlamak, yaşamı dönüştürmek için buradayız.",
 } as const;
 
-/* TODO: gercek iletisim bilgileri gelince guncellenecek (telefon su an ornek). */
 export const contact = {
   site: "neurovyn.com.tr",
   email: "info@neurovyn.com.tr",
-  phone: "+90 555 123 45 67",
-  phoneHref: "+905551234567",
+  phone: "+90 555 824 84 20",
+  phoneHref: "+905558248420",
+  /** wa.me formati: basinda + ve bosluk olmadan */
+  whatsapp: "905558248420",
+  whatsappMessage: "Merhaba, Neurovyn hakkında bilgi almak istiyorum.",
   address: "İstanbul, Türkiye",
 } as const;
+
+/** Onceden doldurulmus mesajla WhatsApp baglantisi. */
+export const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
+  contact.whatsappMessage,
+)}`;
 
 export type NavItem = {
   label: string;

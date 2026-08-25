@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/page-shell";
+import { WhatsAppLink } from "@/components/layout/whatsapp-button";
 import { contactLinks } from "@/lib/site";
 import { ContactForm } from "./contact-form";
 
@@ -49,6 +50,13 @@ export default function ContactPage() {
               );
             })}
           </ul>
+
+          <div className="mt-8">
+            <WhatsAppLink />
+            <p className="mt-2.5 text-[13px] text-fg-faint">
+              Hızlı soru için WhatsApp genellikle en pratik yol.
+            </p>
+          </div>
 
           <div className="mt-10 rounded-2xl border border-border bg-surface p-6">
             <h3 className="font-display text-[15px] font-bold">İlk görüşme nasıl ilerler?</h3>
