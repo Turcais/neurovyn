@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Lora, Manrope } from "next/font/google";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -72,7 +74,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a href="#icerik" className="skip-link">
             İçeriğe geç
           </a>
-          {children}
+          <div className="flex min-h-dvh flex-col">
+            <Header />
+            <main id="icerik" className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
