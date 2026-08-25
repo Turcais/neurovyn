@@ -253,3 +253,128 @@ export const founderStory = {
   closing:
     "Benim için her birey değerlidir. Her bireyin içinde keşfedilmeyi bekleyen bir potansiyel vardır. Ve doğru anlaşılan, kabul gören ve desteklenen her bireyin; kendi yaşam sistemiyle uyum kurduğunda dönüşebileceğine inanıyorum.",
 } as const;
+
+/* ---------------- Marka Rehberi v1.0: Yaşam Modeli ---------------- */
+
+export const brandIntro =
+  "Neurovyn; zihin, beden ve ekosistemi bir bütün olarak ele alan, bilimsel temelli yaşam tasarımı metodolojisidir. Amacı yalnızca sorun çözmek değil; bireyin potansiyelini ortaya çıkarmak, iyi oluşunu desteklemek ve kalıcı gelişim sağlamaktır.";
+
+export const brandVision =
+  "Nöroçeşitliliği ve insan gelişimini bilimsel, etik ve bütüncül bir bakış açısıyla ele alan öncü yaşam tasarımı markası olmak.";
+
+export const brandMission =
+  "Bilimi günlük yaşama taşıyan araçlar geliştirerek bireylerin, ailelerin ve kurumların sürdürülebilir gelişimini desteklemek.";
+
+/** Zihin + Beden + Ekosistem → Kalıcı ve Sürdürülebilir Gelişim */
+export const lifeModel = {
+  parts: [
+    {
+      title: "Zihin",
+      body: "Düşünme, öğrenme, farkındalık, duygular ve potansiyelin merkezidir.",
+      colorVar: "--area-egitim",
+    },
+    {
+      title: "Beden",
+      body: "Yaşam enerjisini, bedensel sağlığı ve sinir sistemini besleyen temel kaynaktır.",
+      colorVar: "--area-saglik",
+    },
+    {
+      title: "Ekosistem",
+      body: "Aile, eğitim, iş, sosyal çevre ve fiziksel ortam bireyi saran destekleyici ağdır.",
+      colorVar: "--area-toplum",
+    },
+  ],
+  outcome: {
+    title: "Kalıcı ve Sürdürülebilir Gelişim",
+    body: "Kısa süreli çözümler değil; yaşam boyu süren, anlamlı ve sürdürülebilir gelişim.",
+    colorVar: "--area-anlam",
+  },
+} as const;
+
+export const philosophy = [
+  "İnsan yalnızca zihninden ibaret değildir.",
+  "Zihin, beden ve yaşadığı ekosistem sürekli etkileşim içindedir.",
+  "Kalıcı gelişim; bu üç alanın birlikte anlaşılması ve desteklenmesiyle mümkündür.",
+] as const;
+
+export const brandClosing =
+  "Her birey farklıdır. Her yaşam bir bütündür. Kalıcı gelişim; zihin, beden ve ekosistemin uyumuyla başlar.";
+
+/* ---------------- Logo Anlamı ---------------- */
+
+export const logoMeaning = [
+  { symbol: "Beyin şeklindeki ağaç", meaning: "Öğrenme, potansiyel, yaşam ve sürekli gelişim.", colorVar: "--area-anlam" },
+  { symbol: "Mor", meaning: "Zihin, bilim ve farkındalık.", colorVar: "--area-egitim" },
+  { symbol: "Yeşil", meaning: "Ekosistem, yaşam, doğa ve büyüme.", colorVar: "--area-toplum" },
+  { symbol: "Altın gövde", meaning: "Beden, denge ve yaşam enerjisi.", colorVar: "--area-anlam" },
+  { symbol: "Işık halkası", meaning: "Ekosistemle karşılıklı etkileşim.", colorVar: "--area-gelisim" },
+  { symbol: "Kökler", meaning: "Bilimsel temel.", colorVar: "--area-saglik" },
+  { symbol: "Sürekli büyüyen ağaç", meaning: "Kalıcı ve sürdürülebilir gelişim.", colorVar: "--area-kariyer" },
+] as const;
+
+/* ---------------- Çalışma İlkelerimiz ---------------- */
+
+export const workingPrinciples = [
+  { title: "Bilimle Anlarız", colorVar: "--area-egitim" },
+  { title: "Etikle Yaklaşırız", colorVar: "--area-saglik" },
+  { title: "Ekosistemle Düşünürüz", colorVar: "--area-toplum" },
+  { title: "Güçlü Yönleri Görürüz", colorVar: "--area-anlam" },
+  { title: "Birlikte Tasarlarız", colorVar: "--area-gelisim" },
+  { title: "Sürekli Gelişiriz", colorVar: "--area-aile" },
+  { title: "Anlamlı Yaşama Odaklanırız", colorVar: "--area-kariyer" },
+] as const;
+
+/* ---------------- Nöroçeşitliliğe Bakışımız ---------------- */
+
+export const neurodiversityView = {
+  lead: "Nöroçeşitlilik düzeltilmesi gereken bir kusur değildir. İnsanlığın doğal çeşitliliğinin bir parçasıdır.",
+  body: "Biz tanıyı reddetmeyiz. Ama bireyi yalnızca tanısıyla tanımlamayız.",
+} as const;
+
+/* ---------------- Uygulama Modları ---------------- */
+
+export const applicationModes = [
+  {
+    title: "Neurovyn Koçluğu",
+    body: "Bireyin kendi yaşam sistemini tanıması, hedeflerini netleştirmesi ve adımlarını birlikte tasarlaması için yürütülen birebir çalışmadır.",
+    colorVar: "--area-gelisim",
+  },
+  {
+    title: "Neurovyn Danışmanlığı",
+    body: "Aileler, okullar ve kurumlar için değerlendirme, haritalama ve çözüm tasarımı içeren yapılandırılmış süreçtir.",
+    colorVar: "--area-kariyer",
+  },
+  {
+    title: "Neurovyn Eğitimleri",
+    body: "Eğitimciler, uzmanlar ve ekipler için nöroyaşam bakış açısını uygulamaya dönüştüren atölye ve programlardır.",
+    colorVar: "--area-toplum",
+  },
+  {
+    title: "Neurovyn Mentörlüğü",
+    body: "Uzun soluklu eşlik: gelişim rotasının uygulanması boyunca düzenli izleme, geri bildirim ve yön ayarı.",
+    colorVar: "--area-anlam",
+  },
+] as const;
+
+/* ---------------- Neurovyn İlkeleri (18 madde) ---------------- */
+
+export const neurovynPrinciples = [
+  "Anlamak, dönüşümün başlangıcıdır.",
+  "Hiçbir birey tek başına gelişmez.",
+  "Sorun birey değildir; sorun, birey ile yaşam sistemi arasındaki uyumun bozulmasıdır.",
+  "Her birey, kendine özgü bir gelişim mimarisine sahiptir.",
+  "Bir adım birey, bir adım çevre birbirine yaklaşır ve karşılıklı dönüşüm başlar.",
+  "Potansiyel, doğru yaşam sistemi içinde görünür olur.",
+  "Farklılık, düzeltilmesi gereken bir kusur değil; anlaşılması gereken bir özelliktir.",
+  "Kabul görmek, gelişimin en güçlü zeminidir.",
+  "Gerçek değişim, birey ve çevre birlikte dönüşebildiğinde kalıcı olur.",
+  "Her yaşam yeniden tasarlanabilir.",
+  "Bireyi değiştirmekten önce, onu anlamaya çalış.",
+  "Yaşam; ilişkiler, bağlar ve anlam üzerine inşa edilir.",
+  "Her davranışın arkasında anlaşılmayı bekleyen bir ihtiyaç vardır.",
+  "Çözüm, bireyi değiştirmekte değil; yaşam sistemiyle uyumunu güçlendirmektedir.",
+  "Dönüşüm, mükemmelleşmek değil; kendinle ve çevrenle uyum kurabilmektir.",
+  "İnsan, ait olduğu sistem kadar güçlenir.",
+  "Gelişim, bir hedef değil; yaşam boyu süren bilinçli bir tasarım yolculuğudur.",
+  "Neurovyn; bireyin, çevrenin ve yaşamın birlikte gelişebileceğine inanır.",
+] as const;

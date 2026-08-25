@@ -3,7 +3,7 @@ import { MoveRight } from "lucide-react";
 import { PageShell } from "@/components/layout/page-shell";
 import { ButtonLink } from "@/components/ui/button";
 import { Prose, PullQuote, SectionHeading } from "@/components/ui/section";
-import { founderStory } from "@/lib/content";
+import { founderStory, logoMeaning } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -82,13 +82,41 @@ export default function AboutPage() {
         </p>
       </section>
 
+      {/* Logomuzun anlamı */}
+      <section className="mt-20">
+        <SectionHeading
+          eyebrow="Logomuzun Anlamı"
+          title="Beyin şeklindeki ağaç"
+          lead="Logodaki her öge, Neurovyn'in nasıl düşündüğünü anlatan bir karşılığa sahiptir."
+        />
+
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {logoMeaning.map((item) => (
+            <li key={item.symbol} className="rounded-2xl border border-border bg-surface p-6">
+              <span
+                className="inline-block size-2.5 rounded-full"
+                style={{ backgroundColor: `var(${item.colorVar})` }}
+                aria-hidden
+              />
+              <h3
+                className="mt-3 font-display text-[15px] font-bold leading-snug"
+                style={{ color: `var(${item.colorVar})` }}
+              >
+                {item.symbol}
+              </h3>
+              <p className="mt-2 text-[13.5px] leading-[1.7] text-fg-muted">{item.meaning}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <div className="mt-14 flex flex-wrap gap-4">
         <ButtonLink href="/manifesto" size="lg">
           Manifestoyu okuyun
           <MoveRight className="size-[18px]" aria-hidden />
         </ButtonLink>
-        <ButtonLink href="/iletisim" variant="outline" size="lg">
-          Bize Ulaşın
+        <ButtonLink href="/ilkelerimiz" variant="outline" size="lg">
+          İlkelerimiz
         </ButtonLink>
       </div>
     </PageShell>

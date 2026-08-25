@@ -74,6 +74,65 @@ Marka nöroçeşitlilik üzerine kurulu; erişilebilirlik pazarlama değil, teme
 - Her sayfada "İçeriğe geç" atlama bağlantısı
 - Renk tek başına anlam taşımaz; ikon veya metinle desteklenir
 
+## Marka Rehberi v1.0 (müşteriden)
+
+### Neurovyn Yaşam Modeli
+
+**Zihin + Beden + Ekosistem → Kalıcı ve Sürdürülebilir Gelişim**
+
+Tüm çalışmaların ortak omurgası budur. Ana sayfada bir bölüm olarak yer alır.
+
+### Slogan
+
+- Ana: **Ekosistem Temelli Nöroyaşam Tasarımı**
+- Kısa: **Zihin • Beden • Ekosistem**
+- Sitede kullanılan alt başlık ayrı kalır: **Nöroyaşam Tasarımı** (mockup kararı)
+
+### Logo Anlamı
+
+| Öge | Anlam |
+|---|---|
+| Beyin şeklindeki ağaç | Öğrenme, potansiyel, yaşam, sürekli gelişim |
+| Mor | Zihin, bilim, farkındalık |
+| Yeşil | Ekosistem, yaşam, doğa, büyüme |
+| Altın gövde | Beden, denge, yaşam enerjisi |
+| Işık halkası | Ekosistemle karşılıklı etkileşim |
+| Kökler | Bilimsel temel |
+| Sürekli büyüyen ağaç | Kalıcı ve sürdürülebilir gelişim |
+
+Ağaç bileşeni (`brand-tree.tsx`) bu anlam haritasına birebir uyar.
+
+### Görsel Dil
+
+Beyaz zemin · siyah zemin · mor & yeşil ana renkler · altın detaylar ·
+minimal tasarım · ince çizgiler · premium görünüm · aydınlık ve umut veren ışık.
+
+### Ses Tonu
+
+Bilimsel · sade · umut veren · yargılamayan · merak uyandıran · samimi · güven veren.
+
+**Yazarken:** Etiket yerine tanım kullan ("nöroçeşitli birey", "yaramaz çocuk" değil).
+Kesin vaat verme. Emir kipi yerine davet dili kullan.
+
+### Uygulama Modları
+
+Neurovyn Koçluğu · Neurovyn Danışmanlığı · Neurovyn Eğitimleri · Neurovyn Mentörlüğü
+
+## ⚠ Çözülmesi Gereken: Üç Ayrı İlke Listesi
+
+Müşteriden birbirinden farklı üç ilke listesi geldi. Şu an üçü de sitede,
+ama farklı sayfalarda ve farklı rollerde duruyor:
+
+| Liste | Kaç madde | Nerede | Rolü |
+|---|---|---|---|
+| Neurovyn İlkeleri | 18 | `/ilkelerimiz` | Felsefi bildirge |
+| 10 Temel İlke | 10 | `/misyonumuz` | Çalışma kuralları |
+| İlkelerimiz (Bilimle Anlarız…) | 7 | `/ilkelerimiz` üstünde etiket olarak | Kısa slogan seti |
+
+İçerikleri kısmen örtüşüyor (ör. "Anlamak dönüşümün başlangıcıdır" hem 18'lik
+listede hem manifestoda var). Müşteriye sorulmalı: üçü de kalsın mı, yoksa
+tek bir listede birleştirilsin mi?
+
 ## Geçici Varlıklar
 
 Müşteriden gerçek dosyalar gelene kadar yerine geçen bileşenler

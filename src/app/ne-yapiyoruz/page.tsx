@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/page-shell";
 import { SectionHeading, StepCard } from "@/components/ui/section";
-import { methodologySteps } from "@/lib/content";
+import { applicationModes, methodologySteps } from "@/lib/content";
 import { pillars } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -97,6 +97,34 @@ export default function WhatWeDoPage() {
           Amaç: Bireyin potansiyelini ortaya çıkarmak ve ekosisteminde kabul, katılım ve aidiyetle
           yaşamasını sağlamak.
         </p>
+      </div>
+
+      {/* Uygulama modları */}
+      <div className="mt-20">
+        <SectionHeading
+          eyebrow="Uygulama Modları"
+          title="Bu yaklaşımı dört farklı biçimde çalıştırırız"
+          lead="Hangi modda çalışacağımıza, ilk görüşmede ihtiyacınızı birlikte değerlendirerek karar veririz."
+        />
+
+        <ul className="grid gap-4 sm:grid-cols-2">
+          {applicationModes.map((mode) => (
+            <li key={mode.title} className="rounded-2xl border border-border bg-surface p-7">
+              <span
+                className="block h-1 w-10 rounded-full"
+                style={{ backgroundColor: `var(${mode.colorVar})` }}
+                aria-hidden
+              />
+              <h3
+                className="mt-4 font-display text-[17px] font-bold"
+                style={{ color: `var(${mode.colorVar})` }}
+              >
+                {mode.title}
+              </h3>
+              <p className="mt-2.5 text-[14px] leading-[1.75] text-fg-muted">{mode.body}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </PageShell>
   );

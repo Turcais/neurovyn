@@ -153,6 +153,7 @@ export const footerNav = {
     items: [
       { label: "Hakkımızda", href: "/hakkimizda" },
       { label: "Manifesto", href: "/manifesto" },
+      { label: "İlkelerimiz", href: "/ilkelerimiz" },
       { label: "Ekibimiz", href: "/ekibimiz" },
       { label: "Yaklaşımımız", href: "/yaklasimimiz" },
       { label: "Gizlilik Politikası", href: "/gizlilik-politikasi" },

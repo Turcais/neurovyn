@@ -1,5 +1,5 @@
 import { MessageCircle, MoveRight } from "lucide-react";
-import { HeroTree } from "@/components/brand/hero-tree";
+import { BrandTree } from "@/components/brand/brand-tree";
 import { Logo } from "@/components/brand/logo";
 import { ButtonLink } from "@/components/ui/button";
 import { ctaNav, site } from "@/lib/site";
@@ -47,7 +47,7 @@ export function Hero() {
           </div>
         </div>
 
-        <HeroTree className="mx-auto w-full max-w-[34rem] lg:max-w-none" />
+        <BrandTree className="mx-auto w-full max-w-[32rem] lg:max-w-none" />
       </div>
     </section>
   );

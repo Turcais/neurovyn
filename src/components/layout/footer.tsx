@@ -1,42 +1,16 @@
 import Link from "next/link";
+import { BrandTree } from "@/components/brand/brand-tree";
 import { Logo } from "@/components/brand/logo";
 import { contactLinks, footerNav, site, socialLinks } from "@/lib/site";
 
-/** Footer'in sag alt kosesindeki dekoratif isikli yaprak kumesi. */
+/** Footer'in sag alt kosesinde soluk duran marka agaci. */
 function FooterFlourish() {
   return (
-    <div className="pointer-events-none absolute bottom-0 right-0 hidden h-52 w-72 overflow-hidden md:block" aria-hidden>
-      <svg viewBox="0 0 288 208" fill="none" className="size-full">
-        <defs>
-          <radialGradient id="ff-glow" cx="50%" cy="70%" r="60%">
-            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.30" />
-            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <ellipse cx="186" cy="150" rx="110" ry="80" fill="url(#ff-glow)" />
-        <g stroke="#8b93c7" strokeOpacity="0.5" strokeWidth="1.2" strokeLinecap="round">
-          <path d="M186 208V118" />
-          <path d="M186 156c-16-4-28-14-34-28M186 156c16-4 28-14 34-28M186 132c-12-6-20-16-23-29M186 132c12-6 20-16 23-29" />
-        </g>
-        {[
-          { cx: 150, cy: 126, r: 13, fill: "#a78bfa" },
-          { cx: 222, cy: 126, r: 13, fill: "#a3e635" },
-          { cx: 161, cy: 100, r: 11, fill: "#f472b6" },
-          { cx: 211, cy: 100, r: 11, fill: "#60a5fa" },
-          { cx: 186, cy: 84, r: 12, fill: "#fbbf24" },
-        ].map((leaf) => (
-          <ellipse
-            key={`${leaf.cx}-${leaf.cy}`}
-            cx={leaf.cx}
-            cy={leaf.cy}
-            rx={leaf.r}
-            ry={leaf.r * 1.5}
-            fill={leaf.fill}
-            fillOpacity="0.5"
-            transform={`rotate(${leaf.cx < 186 ? -28 : leaf.cx > 186 ? 28 : 0} ${leaf.cx} ${leaf.cy})`}
-          />
-        ))}
-      </svg>
+    <div
+      className="pointer-events-none absolute -bottom-16 -right-10 hidden w-[26rem] opacity-[0.18] md:block"
+      aria-hidden
+    >
+      <BrandTree decorative showHalo={false} />
     </div>
   );
 }

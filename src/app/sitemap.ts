@@ -9,6 +9,7 @@ const routes = [
   { path: "/alanlarimiz", priority: 0.9 },
   { path: "/hakkimizda", priority: 0.8 },
   { path: "/manifesto", priority: 0.7 },
+  { path: "/ilkelerimiz", priority: 0.7 },
   { path: "/yaklasimimiz", priority: 0.8 },
   { path: "/ekibimiz", priority: 0.5 },
   { path: "/blog", priority: 0.7 },
