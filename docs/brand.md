@@ -133,17 +133,33 @@ ama farklı sayfalarda ve farklı rollerde duruyor:
 listede hem manifestoda var). Müşteriye sorulmalı: üçü de kalsın mı, yoksa
 tek bir listede birleştirilsin mi?
 
-## Geçici Varlıklar
+## Görsel Varlıklar
 
-Müşteriden gerçek dosyalar gelene kadar yerine geçen bileşenler
-(hepsinde kodda `TODO` notu var):
+Kaynak dosyalar müşteride: `Pictures/wp/nb` klasörü, 18 adet WhatsApp JPEG.
 
-| Bileşen | Dosya | Ne bekliyoruz |
+Sitede kullanılanlar `public/marka/` altında:
+
+| Dosya | Kaynak | Nasıl hazırlandı |
 |---|---|---|
-| Logo ağaç sembolü | `src/components/brand/tree-mark.tsx` | Gerçek logo SVG |
-| Hero illüstrasyonu | `src/components/brand/hero-tree.tsx` | Gerçek hero görseli |
-| Telefon numarası | `src/lib/site.ts` → `contact.phone` | Gerçek numara |
+| `agac-acik.webp` (540×619) | `15.21.17 (7).jpeg` — açık zeminli logo | Ağaç kırpıldı, kenarlar yumuşatıldı, koyu sürümle aynı orana getirildi |
+| `agac-koyu.webp` (560×642) | `15.21.17 (1).jpeg` — koyu infografik | Ağaç kırpıldı; infografiğin bağlantı çizgileri satır enterpolasyonuyla silindi (ışık halkası korunarak), kenarlar yumuşatıldı |
+| `isaret-acik/koyu.webp` (128×128) | aynı kaynaklar | Kare işaret; şu an kullanılmıyor, yedek |
+
+Hero ve footer `BrandTreeImage` bileşenini kullanır. Footer her iki temada da koyu
+zeminli olduğu için `variant="dark"` ile sabitlenmiştir.
+
+**Header logosundaki ağaç hâlâ çizgisel SVG** (`tree-mark.tsx`) — gerçek görsel
+23 piksellik boyutta okunmadığı için bilinçli tercih.
+
+## Hâlâ Bekleyenler
+
+| Ne | Nerede | Ne bekliyoruz |
+|---|---|---|
+| Telefon numarası | `src/lib/site.ts` → `contact.phone` | Gerçek numara (şu an örnek) |
 | Sosyal medya adresleri | `src/lib/site.ts` → `socialLinks` | Gerçek profil bağlantıları |
+| Kurucu fotoğrafı | `src/app/hakkimizda/page.tsx` | Ebru Hanım'ın fotoğrafı |
+| Sanity Project ID | — | Blog altyapısı için |
+| Resend API anahtarı | `.env.local` | İletişim formu için |
 
 ## 1. Faz Kapsamı
 
