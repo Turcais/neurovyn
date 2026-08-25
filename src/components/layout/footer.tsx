@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BrandTree } from "@/components/brand/brand-tree";
+import { BrandTreeImage } from "@/components/brand/tree-image";
 import { Logo } from "@/components/brand/logo";
 import { contactLinks, footerNav, site, socialLinks } from "@/lib/site";
 
@@ -7,10 +7,10 @@ import { contactLinks, footerNav, site, socialLinks } from "@/lib/site";
 function FooterFlourish() {
   return (
     <div
-      className="pointer-events-none absolute -bottom-16 -right-10 hidden w-[26rem] opacity-[0.18] md:block"
+      className="pointer-events-none absolute -bottom-24 -right-16 hidden w-[24rem] opacity-30 md:block"
       aria-hidden
     >
-      <BrandTree decorative showHalo={false} />
+      <BrandTreeImage decorative variant="dark" sizes="24rem" />
     </div>
   );
 }
