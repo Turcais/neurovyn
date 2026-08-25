@@ -1,26 +1,180 @@
 @import "tailwindcss";
 
+/* next-themes sinifi ile calisan dark varyanti */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ---- Tipografi ---- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+
+  /* ---- Marka omurgasi: Mor (zihin) -> Yesil (ekosistem) -> Altin (potansiyel) ---- */
+  --color-violet-brand: #7c3aed;
+  --color-green-brand: #4d7c0f;
+  --color-gold-brand: #b45309;
+
+  /* ---- 7 Yasam Alani ---- */
+  --color-area-egitim: #7c3aed;
+  --color-area-aile: #059669;
+  --color-area-saglik: #e11d48;
+  --color-area-kariyer: #0891b2;
+  --color-area-gelisim: #2563eb;
+  --color-area-anlam: #d97706;
+  --color-area-toplum: #65a30d;
+
+  /* ---- Ritim ---- */
+  --radius-card: 1rem;
+  --radius-pill: 999px;
+}
+
+/* ============ ACIK TEMA (varsayilan) ============ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fbfaf7;
+  --bg-subtle: #f4f2ec;
+  --surface: #ffffff;
+  --fg: #14162b;
+  --fg-muted: #55597a;
+  --fg-faint: #80849f;
+  --border: #e6e2d9;
+  --border-strong: #d2ccbe;
+
+  --primary: #6d28d9;
+  --primary-fg: #ffffff;
+  --secondary: #4d7c0f;
+  --accent: #b45309;
+  --ring: #7c3aed;
+
+  --area-egitim: #6d28d9;
+  --area-aile: #047857;
+  --area-saglik: #be123c;
+  --area-kariyer: #0e7490;
+  --area-gelisim: #1d4ed8;
+  --area-anlam: #b45309;
+  --area-toplum: #4d7c0f;
 }
 
+/* ============ KOYU TEMA ============ */
+.dark {
+  --bg: #080b1a;
+  --bg-subtle: #0f1430;
+  --surface: #0f1430;
+  --fg: #edeef7;
+  --fg-muted: #a2a8c6;
+  --fg-faint: #767d9f;
+  --border: #232a4d;
+  --border-strong: #333c68;
+
+  --primary: #a78bfa;
+  --primary-fg: #14162b;
+  --secondary: #a3e635;
+  --accent: #fbbf24;
+  --ring: #a78bfa;
+
+  --area-egitim: #a78bfa;
+  --area-aile: #34d399;
+  --area-saglik: #fb7185;
+  --area-kariyer: #22d3ee;
+  --area-gelisim: #60a5fa;
+  --area-anlam: #fbbf24;
+  --area-toplum: #a3e635;
+}
+
+/* Tailwind utility'lerine tema degiskenlerini bagla */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-ring: var(--ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Erisilebilirlik: net odak halkasi */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Erisilebilirlik: hareketi azalt tercihine tam uyum */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-fg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Marka gradyani: zihin -> ekosistem -> potansiyel */
+  .text-gradient-brand {
+    background-image: linear-gradient(
+      100deg,
+      var(--area-egitim) 0%,
+      var(--area-toplum) 55%,
+      var(--area-anlam) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Okunabilirlik: uzun metinler icin olcut satir uzunlugu */
+  .prose-measure {
+    max-width: 68ch;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--surface);
+    color: var(--fg);
+    border: 2px solid var(--ring);
+    border-radius: 8px;
+  }
 }
