@@ -1,0 +1,255 @@
+/**
+ * Sayfa icerikleri. Musteriden gelen manifesto, ilke ve metodoloji
+ * metinlerinin yapisallastirilmis hali.
+ */
+
+/* ---------------- Vizyon ---------------- */
+
+export const visionStatement =
+  "Neurovyn, bireyi değiştirmeyi değil; bireyin kendini ve ekosistemini anlayarak yaşamını bilinçli şekilde tasarlamasını destekleyen bilim temelli bir Nöroyaşam Tasarımı sistemidir.";
+
+export const visionPillars = [
+  {
+    title: "Birey Merkezli",
+    body: "Her birey benzersizdir. Neurovyn, her bireyin nörobireysel işleyişini anlamaya odaklanır.",
+    colorVar: "--area-egitim",
+  },
+  {
+    title: "Ekosistem Odaklı",
+    body: "Birey, içinde bulunduğu ekosistemin bir parçasıdır. Gelişim, birlikte ve bütüncül olarak mümkündür.",
+    colorVar: "--area-toplum",
+  },
+  {
+    title: "Etik ve Saygılı",
+    body: "Etiketlemek yerine anlamak, yargılamak yerine desteklemek temel ilkemizdir.",
+    colorVar: "--area-saglik",
+  },
+  {
+    title: "Yaşam Tasarımı",
+    body: "Amaç, uyum sağlamak değil; anlamlı, dengeli ve sürdürülebilir bir yaşam tasarlamaktır.",
+    colorVar: "--area-anlam",
+  },
+  {
+    title: "Bilim Temelli",
+    body: "Bilimsel araştırmalar, kanıta dayalı yaklaşımlar ve sürekli öğrenme sistemimizin temelidir.",
+    colorVar: "--area-kariyer",
+  },
+  {
+    title: "Sistem Yaklaşımı",
+    body: "Neurovyn; adımları, araçları ve ilkeleriyle bütünleşik bir dönüşüm sistemi sunar.",
+    colorVar: "--area-gelisim",
+  },
+] as const;
+
+export const corePrinciple = [
+  "Anlamak, değerlendirmeden önce gelir.",
+  "Farklılık, eksiklik değil; çeşitliliktir.",
+  "Her bireyin potansiyeli gelişmeye değerdir.",
+  "Destekleyici ekosistemle dönüşüm kalıcıdır.",
+  "Bilim, etik ve uygulanabilirlik ile ilerleriz.",
+] as const;
+
+/* ---------------- Misyon: 10 Temel İlke ---------------- */
+
+export const missionStatement =
+  "Bireyi anlamak, ekosistemini anlamlandırmak ve yaşamını birlikte tasarlamak. Bilimle anlar, ekosistemiyle bütünleştirir, birlikte dönüştürürüz.";
+
+export const tenPrinciples = [
+  { title: "Her beyin benzersizdir.", body: "Her bireyin nörolojik yapısı kendine özgüdür." },
+  { title: "Tanı kimlik değildir.", body: "Tanı sadece bir bilgidir, kimliğiniz değildir." },
+  { title: "Davranış, bağlamında anlam kazanır.", body: "Her davranış, içinde bulunduğu bağlamla anlamlıdır." },
+  { title: "Gelişim, yaşam ekosisteminde gerçekleşir.", body: "Birey, ailesi, okulu, çevresi ve tüm yaşam ekosistemi bir bütündür." },
+  { title: "Çevre değiştiğinde gelişim de değişebilir.", body: "Doğru çevre ve destekle potansiyel ortaya çıkar." },
+  { title: "Güçlü yönler gelişimin başlangıç noktasıdır.", body: "Odak noktamız eksikler değil, güçlü yönlerdir." },
+  { title: "Bilim, günlük yaşama dönüştüğünde değer üretir.", body: "Bilgi ancak yaşama dokunduğunda anlam kazanır." },
+  { title: "Sürdürülebilir gelişim küçük ama sürekli adımlarla oluşur.", body: "Küçük adımlar, zamanla büyük dönüşümler yaratır." },
+  { title: "Amaç, potansiyeli ortaya çıkarmaktır.", body: "Amaç bireyi değiştirmek değil, potansiyelini ortaya çıkarmaktır." },
+  { title: "Ekosistemde kabul, dönüşümü tamamlar.", body: "Bireyin anlaşılması, değer görmesi, katılımı ve aidiyet hissetmesi esastır." },
+] as const;
+
+export const acceptanceNote =
+  "Ekosistemde Kabul: Bireyin kendi nörolojik farklılığıyla ailesi, okulu, iş yaşamı ve sosyal çevresi içinde anlaşılması, değer görmesi, aktif katılım sağlayabilmesi ve aidiyet hissedebilmesidir.";
+
+/* ---------------- Ne Yapıyoruz: Neurovyn Metodolojisi (NVM) ---------------- */
+
+export const methodologySteps = [
+  {
+    title: "Anla",
+    body: "Bireyin nörolojik yapısını, güçlü yönlerini, ihtiyaçlarını, ilgi alanlarını ve zorluklarını derinlemesine keşfederiz.",
+    colorVar: "--area-egitim",
+  },
+  {
+    title: "Haritala",
+    body: "Yaşam ekosistemini görünür hale getiririz: aile, okul veya iş, sosyal çevre, fiziksel çevre, günlük yaşam, uyku, beslenme, hareket ve dijital yaşam.",
+    colorVar: "--area-toplum",
+  },
+  {
+    title: "Anlamlandır",
+    body: "Belirtileri değil, ilişkileri analiz ederiz. “Bu neden oluyor?” sorusunun cevabını birlikte buluruz.",
+    colorVar: "--area-kariyer",
+  },
+  {
+    title: "Tasarla",
+    body: "Kişiye özel nöroyaşam planı oluştururuz. Hedefleri, stratejileri, çevresel düzenlemeleri ve destek sistemlerini birlikte tasarlarız.",
+    colorVar: "--area-gelisim",
+  },
+  {
+    title: "Uygula",
+    body: "Planı küçük, uygulanabilir ve sürdürülebilir adımlarla hayata geçiririz. Bireyin ritmine uygun ilerleriz.",
+    colorVar: "--area-aile",
+  },
+  {
+    title: "Takip Et",
+    body: "İlerlemeyi düzenli olarak izleriz. Geri bildirimlerle planı güncelleriz. Gelişim tek seferlik değil, yaşayan bir süreçtir.",
+    colorVar: "--area-anlam",
+  },
+  {
+    title: "Ölç",
+    body: "Bilimsel ve işlevsel göstergelerle değişimi değerlendiririz. Nitel ve nicel verilerle ilerlemeyi görünür kılarız.",
+    colorVar: "--area-saglik",
+  },
+  {
+    title: "Dönüştür",
+    body: "Bireyin yalnızca davranışı değil, yaşam ekosistemi de dönüşür. Birey; kendi potansiyeliyle uyumlu, anlamlı ve dengeli bir yaşam kurar.",
+    colorVar: "--area-egitim",
+  },
+] as const;
+
+/* ---------------- Yaklaşımımız: Neurovyn Yaşam Döngüsü ---------------- */
+
+export const lifeCycle = [
+  { title: "Yaşam Pusulası", body: "Bireyin bugünkü konumunu, önceliklerini ve gitmek istediği yönü birlikte belirleriz." },
+  { title: "Yaşam Profili", body: "Güçlü yönleri, öğrenme biçimini, ihtiyaçları ve nörobireysel işleyişi bütüncül olarak ortaya koyarız." },
+  { title: "Yaşam Ekosistemi Haritalaması", body: "Aile, okul, iş, sosyal çevre ve fiziksel ortamı görünür kılar; aralarındaki etkileşimi haritalarız." },
+  { title: "Gelişim Rotası", body: "Kişiye özel hedefleri, stratejileri ve destek sistemlerini içeren yol haritasını birlikte tasarlarız." },
+  { title: "Yaşam Laboratuvarı", body: "Planı küçük denemelerle yaşamın içinde uygularız; işe yarayanı büyütür, yaramayanı birlikte değiştiririz." },
+  { title: "Takip Sistemi", body: "İlerlemeyi düzenli izler, ölçer ve planı canlı tutarız. Gelişim, yaşayan bir süreçtir." },
+] as const;
+
+export const approachClosing =
+  "Yöntemler, araçlar ve uygulamalar değişebilir; ancak yaklaşımımız değişmez. Çünkü bizim için gelişim, bireyi anlamakla başlar; yaşamı bütüncül bir bakış açısıyla değerlendirmek ve bu yolculuğu birlikte tasarlamakla güçlenir.";
+
+/* ---------------- Değer Ürettiğimiz Alanlar: ayrıntı ---------------- */
+
+export type ValueAreaDetail = { lead: string; forWhom: string[] };
+
+export const valueAreaDetails: Record<string, ValueAreaDetail> = {
+  "bireysel-yasam-tasarimi": {
+    lead: "Kendi yaşamını daha bilinçli, dengeli ve anlamlı biçimde tasarlamak isteyen yetişkinlerle çalışırız. Güçlü yönlerinizi görünür kılar, yaşam alanlarınız arasında sürdürülebilir bir denge kurmanıza rehberlik ederiz.",
+    forWhom: [
+      "Yaşamında yön ve anlam arayan yetişkinler",
+      "Kariyer, ilişkiler ve iç dünya arasında denge kurmak isteyenler",
+      "Kendi işleyişini daha iyi anlamak isteyen bireyler",
+    ],
+  },
+  "egitim-ve-ogrenci-gelisimi": {
+    lead: "Öğrencinin nasıl öğrendiğini anlar; çalışma düzenini, motivasyonunu ve öğrenme ortamını birlikte tasarlarız. Odak noktamız not değil, öğrenmenin kendisidir.",
+    forWhom: [
+      "Ortaokul, lise ve üniversite öğrencileri",
+      "Çalışma düzeni ve odaklanma güçlüğü yaşayanlar",
+      "Sınav sürecinde destek arayan öğrenciler ve aileleri",
+    ],
+  },
+  "norocesitli-bireylerle-gelisim": {
+    lead: "Nöroçeşitliliği bir eksiklik değil, çeşitlilik olarak ele alırız. Bireyin kendine özgü işleyişiyle çevresi arasındaki uyumu güçlendirmeye odaklanırız.",
+    forWhom: [
+      "Nöroçeşitli çocuklar, gençler ve yetişkinler",
+      "Tanıyı bir etiket değil, bir bilgi olarak ele almak isteyenler",
+      "Çevresiyle uyum ve kabul arayışındaki bireyler",
+    ],
+  },
+  "aile-ve-ebeveyn-rehberligi": {
+    lead: "Aileyi sürecin doğal bir parçası olarak görürüz. Ebeveynin çocuğunu anlamasını, iletişimi güçlendirmeyi ve evdeki yaşam düzenini birlikte tasarlamayı destekleriz.",
+    forWhom: [
+      "Çocuğunu daha iyi anlamak isteyen ebeveynler",
+      "Ev içi düzen, sınırlar ve iletişimde destek arayan aileler",
+      "Okul ile aile arasında köprü kurmak isteyenler",
+    ],
+  },
+  "egitimci-ve-uzman-gelisimi": {
+    lead: "Eğitimciler ve alan uzmanları için nöroyaşam bakış açısını uygulamaya dönüştüren eğitimler sunarız. Bilimsel bilgiyi sınıfın ve seansın içine taşırız.",
+    forWhom: [
+      "Öğretmenler ve okul rehberlik uzmanları",
+      "Psikolog, danışman ve terapistler",
+      "Kendi uygulamasını bütüncül bir çerçeveye oturtmak isteyen uzmanlar",
+    ],
+  },
+  "kurumsal-egitim-ve-danismanlik": {
+    lead: "Kurumlarda kapsayıcı, nöroçeşitliliğe duyarlı bir çalışma kültürü kurmayı destekleriz. Ekiplerin farklı işleyişleri anlamasını ve birlikte üretmesini kolaylaştırırız.",
+    forWhom: [
+      "Eğitim kurumları ve okullar",
+      "İnsan kaynakları ve yönetici ekipleri",
+      "Kapsayıcı çalışma kültürü kurmak isteyen şirketler",
+    ],
+  },
+};
+
+/* ---------------- Manifesto ---------------- */
+
+export const manifesto = {
+  lead: "Anlamak dönüşümün başlangıcıdır.",
+  sections: [
+    {
+      title: "İnsanlar aynı şekilde öğrenmez.",
+      paragraphs: [
+        "İnsanlar aynı şekilde öğrenmez, gelişmez ve yaşamı aynı biçimde deneyimlemez. Buna rağmen uzun yıllardır eğitim ve gelişim sistemleri, bireylerden aynı yolu izlemelerini bekliyor.",
+        "Oysa her birey; güçlü yönleri, öğrenme biçimi, deneyimleri ve içinde bulunduğu çevreyle kendine özgü bir bütündür. Neurovyn, bu gerçekten yola çıkan bütüncül bir yaklaşımdır.",
+      ],
+    },
+    {
+      title: "Birey ve çevresi canlı bir sistemdir.",
+      paragraphs: [
+        "Biz gelişimi yalnızca bireye odaklanarak değil; bireyin yakın çevresi, eğitim ortamı ve sosyal yaşamıyla kurduğu etkileşim içinde değerlendiririz. Çünkü birey ve çevresi birbirini sürekli etkileyen canlı bir sistemdir.",
+        "İnanıyoruz ki kalıcı gelişim, bireyi değiştirmeye çalışmakla değil; onu anlamak, güçlü yönlerini görünür kılmak ve çevresiyle kurduğu ilişkiyi güçlendirmekle başlar.",
+      ],
+    },
+    {
+      title: "Merkezde önce anlamak vardır.",
+      paragraphs: [
+        "Her bireyin kendine özgü öğrenme biçimini, gelişim sürecini ve potansiyelini anlamaya çalışır; ardından bireysel, akademik ve sosyal gelişimi birlikte ele alırız. Gerektiğinde aileyi, eğitim ortamını ve günlük yaşamı da sürecin doğal bir parçası olarak değerlendiririz.",
+        "Neurovyn, yalnızca nöroçeşitli bireyler için değil; her bireyin daha sağlıklı öğrenebilmesi, gelişebilmesi ve potansiyelini gerçekleştirebilmesi için kapsayıcı bir bakış açısı sunar. Çünkü farklılık bir istisna değil, insan olmanın doğal bir parçasıdır.",
+      ],
+    },
+    {
+      title: "Hazır kalıplar sunmayız.",
+      paragraphs: [
+        "Her bireyin yaşamına, ihtiyaçlarına ve hedeflerine uyum sağlayan gelişim yolları oluşturmayı amaçlarız. Danışmanlık, eğitim ve koçluk çalışmalarımızı da bu anlayışla yürütür; gelişimin yaşamın içinde, süreklilik kazanan dinamik bir süreç olduğuna inanırız.",
+        "Neurovyn, yalnızca bir yöntem değil, insanı anlamaya dayalı bir düşünme biçimidir.",
+      ],
+    },
+  ],
+  creed: [
+    "İnsan anlaşılırsa öğrenme güçlenir.",
+    "Çevre güçlenirse gelişim desteklenir.",
+    "Gelişim desteklendikçe yaşam dönüşür.",
+  ],
+  closing: "Ve her dönüşüm… Anlamakla başlar.",
+} as const;
+
+/* ---------------- Hakkımızda: kurucu ---------------- */
+
+export const founderStory = {
+  lead: "Bazı fikirler bir günde doğmaz. Onlar; yıllar boyunca biriken gözlemlerin, soruların, deneyimlerin ve anlam arayışının doğal sonucudur.",
+  paragraphs: [
+    "Neurovyn de benim için böyle başladı. Yıllar boyunca eğitim alanında çalışırken aynı soruyla tekrar tekrar karşılaştım: Neden aynı imkânlara sahip iki birey, yaşamda birbirinden tamamen farklı yollar izliyor?",
+    "Bu sorunun cevabını yalnızca bireyin içinde aramanın yeterli olmadığını gördüm. Çünkü hiçbir birey tek başına gelişmez. Her insan; ailesiyle, eğitim sistemiyle, iş yaşamıyla, sosyal çevresiyle ve yaşamın görünmeyen dinamikleriyle birlikte var olur. Bir bireyi anlamaya çalışırken, onun içinde bulunduğu sistemi görmezden gelirsek resmi eksik okuruz.",
+    "Özellikle nöroçeşitli bireylerle çalışırken bu gerçeği daha derinden fark ettim. Çoğu zaman sorun bireyin kendisi değildi. Sorun; bireyin kendine özgü özellikleri ile yaşadığı çevre arasındaki uyumsuzluktu. İşte bu farkındalık, zamanla Neurovyn Yaşam Tasarımı Felsefesi'nin temelini oluşturdu.",
+    "Neurovyn; eğitim, nörogelişim, insan davranışı ve sistem düşüncesini bir araya getiren bütüncül bir yaşam tasarımı felsefesidir. Bu yaklaşım yalnızca çözüm üretmeyi değil; anlamayı, ilişki ve bağ kurmayı, birey ile çevresi arasında karşılıklı uyumu geliştirmeyi ve yaşamı birlikte yeniden tasarlamayı amaçlar.",
+  ],
+  pullQuote: "Bir adım birey, bir adım çevre birbirine yaklaşır ve karşılıklı dönüşüm başlar.",
+  aims: [
+    "Bireyin potansiyelini görünür kılmak",
+    "Yaşamındaki ilişkileri anlamlandırmak",
+    "Bireyin kendine özgü özelliklerinin ailesi, eğitim ortamı, iş yaşamı ve sosyal çevresi tarafından doğru anlaşılmasını, kabul edilmesini ve desteklenmesini sağlamak",
+    "Birey ile çevresi arasında daha sağlıklı ve sürdürülebilir bağlar kurulmasına katkıda bulunmak",
+    "Aileyi, okulu, iş yaşamını ve sosyal çevreyi gelişim sürecinin doğal bir parçası hâline getirmek",
+    "Bireyin kendi yaşam sistemini bilinçli biçimde tasarlayabilmesini desteklemek",
+    "Daha kapsayıcı, daha anlaşılır ve daha insancıl bir yaşam kültürüne katkı sunmak",
+  ],
+  bio: [
+    "Uzun yıllar üniversitede Doktor Öğretim Üyesi olarak görev yaptım. Mimarlık alanındaki doktora eğitimim, bana yalnızca mekânları değil; sistemleri, ilişkileri ve bütüncül düşünmeyi de öğretti.",
+    "Akademik yaşamım boyunca edindiğim deneyimler ile eğitim, nörogelişim, rehberlik, iletişim ve yaşam tasarımı alanlarında sürdürdüğüm çalışmalar zaman içinde ortak bir bakış açısında buluştu. Neurovyn, bu birikimin ve insanı yalnızca birey olarak değil, yaşam sistemiyle birlikte ele alma anlayışının doğal sonucudur.",
+  ],
+  closing:
+    "Benim için her birey değerlidir. Her bireyin içinde keşfedilmeyi bekleyen bir potansiyel vardır. Ve doğru anlaşılan, kabul gören ve desteklenen her bireyin; kendi yaşam sistemiyle uyum kurduğunda dönüşebileceğine inanıyorum.",
+} as const;

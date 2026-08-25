@@ -1,15 +1,96 @@
 import type { Metadata } from "next";
-import { ContentPending, PageShell } from "@/components/layout/page-shell";
+import { MoveRight } from "lucide-react";
+import { PageShell } from "@/components/layout/page-shell";
+import { ButtonLink } from "@/components/ui/button";
+import { Prose, PullQuote, SectionHeading } from "@/components/ui/section";
+import { founderStory } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
-  description: "Bazı fikirler bir günde doğmaz. Onlar; yıllar boyunca biriken gözlemlerin, soruların, deneyimlerin ve anlam arayışının doğal sonucudur.",
+  description: founderStory.lead,
 };
 
-export default function Page() {
+export default function AboutPage() {
   return (
-    <PageShell title="Hakkımızda" lead="Bazı fikirler bir günde doğmaz. Onlar; yıllar boyunca biriken gözlemlerin, soruların, deneyimlerin ve anlam arayışının doğal sonucudur.">
-      <ContentPending note="Kurucu Ebru Şahin Mercimek'in yazısı, Neurovyn'in doğuşu ve kurucu fotoğrafı bu sayfaya yerleştirilecek." />
+    <PageShell title="Neurovyn nasıl doğdu?" lead={founderStory.lead}>
+      <Prose>
+        {founderStory.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </Prose>
+
+      <PullQuote>{founderStory.pullQuote}</PullQuote>
+
+      <div className="mt-14">
+        <SectionHeading
+          eyebrow="Amacım"
+          title="Bilgi aktarmak ya da danışmanlık yapmaktan fazlası"
+          lead="Bugün Neurovyn'i geliştirirken farklı disiplinlerden beslenmeye, bilimsel gelişmeleri takip etmeye ve sürekli öğrenmeye devam ediyorum."
+        />
+
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {founderStory.aims.map((aim) => (
+            <li
+              key={aim}
+              className="flex items-start gap-3 rounded-xl border border-border bg-surface px-5 py-4"
+            >
+              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+              <span className="text-[14.5px] leading-[1.7] text-fg-muted">{aim}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Kurucu */}
+      <section className="mt-20 rounded-2xl border border-border bg-bg-subtle p-8 sm:p-12">
+        <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:gap-12">
+          {/* TODO: musteriden kurucu fotografi gelince buraya yerlestirilecek. */}
+          <div
+            className="flex size-32 shrink-0 items-center justify-center rounded-2xl border border-dashed border-border-strong bg-surface text-center font-display text-[11px] font-semibold uppercase tracking-wider text-fg-faint lg:size-40"
+            aria-hidden
+          >
+            Fotoğraf
+            <br />
+            eklenecek
+          </div>
+
+          <div>
+            <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
+              Kurucu
+            </p>
+            <h2 className="mt-3 font-display text-[24px] font-bold sm:text-[28px]">
+              {site.founder}
+            </h2>
+            <div className="prose-measure mt-5 space-y-4">
+              {founderStory.bio.map((paragraph) => (
+                <p key={paragraph} className="text-[15px] leading-[1.85] text-fg-muted">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <p className="prose-measure mt-10 border-t border-border pt-8 text-[15px] leading-[1.85] text-fg-muted">
+          {founderStory.closing}
+        </p>
+
+        <p className="mt-8 font-serif text-[19px] italic text-ink">
+          Neurovyn, birlikte anlamanın, birlikte dönüşmenin ve birlikte gelişmenin yaşam
+          felsefesidir.
+        </p>
+      </section>
+
+      <div className="mt-14 flex flex-wrap gap-4">
+        <ButtonLink href="/manifesto" size="lg">
+          Manifestoyu okuyun
+          <MoveRight className="size-[18px]" aria-hidden />
+        </ButtonLink>
+        <ButtonLink href="/iletisim" variant="outline" size="lg">
+          Bize Ulaşın
+        </ButtonLink>
+      </div>
     </PageShell>
   );
 }

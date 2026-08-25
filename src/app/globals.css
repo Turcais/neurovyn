@@ -122,6 +122,14 @@
   --color-footer-bg: var(--footer-bg);
   --color-footer-fg: var(--footer-fg);
   --color-footer-muted: var(--footer-muted);
+
+  --color-area-egitim: var(--area-egitim);
+  --color-area-aile: var(--area-aile);
+  --color-area-saglik: var(--area-saglik);
+  --color-area-kariyer: var(--area-kariyer);
+  --color-area-gelisim: var(--area-gelisim);
+  --color-area-anlam: var(--area-anlam);
+  --color-area-toplum: var(--area-toplum);
 }
 
 @layer base {

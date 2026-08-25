@@ -152,6 +152,7 @@ export const footerNav = {
     title: "Kurumsal",
     items: [
       { label: "Hakkımızda", href: "/hakkimizda" },
+      { label: "Manifesto", href: "/manifesto" },
       { label: "Ekibimiz", href: "/ekibimiz" },
       { label: "Yaklaşımımız", href: "/yaklasimimiz" },
       { label: "Gizlilik Politikası", href: "/gizlilik-politikasi" },
