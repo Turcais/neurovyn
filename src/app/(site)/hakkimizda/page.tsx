@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <PageShell title="Neurovyn nasıl doğdu?" lead={founderStory.lead}>
+    <PageShell cmsKey="hakkimizda" title="Neurovyn nasıl doğdu?" lead={founderStory.lead}>
       <Prose>
         {founderStory.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>

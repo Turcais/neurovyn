@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ManifestoPage() {
   return (
-    <PageShell title="Neurovyn Manifestosu" lead={manifesto.lead}>
+    <PageShell cmsKey="manifesto" title="Neurovyn Manifestosu" lead={manifesto.lead}>
       <div className="space-y-14">
         {manifesto.sections.map((section) => (
           <section key={section.title}>

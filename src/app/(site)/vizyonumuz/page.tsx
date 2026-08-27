@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function VisionPage() {
   return (
-    <PageShell title="Vizyonumuz" lead="Neye inanıyoruz?">
+    <PageShell cmsKey="vizyonumuz" title="Vizyonumuz" lead="Neye inanıyoruz?">
       <blockquote className="rounded-2xl border border-border bg-bg-subtle p-8 sm:p-10">
         <p className="prose-measure font-display text-[20px] font-semibold leading-[1.6] text-ink sm:text-[24px]">
           {visionStatement}

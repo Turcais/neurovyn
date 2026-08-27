@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <PageShell title="Ekibimiz" lead="Neurovyn'i birlikte kuran ve büyüten ekip.">
+    <PageShell cmsKey="ekibimiz" title="Ekibimiz" lead="Neurovyn'i birlikte kuran ve büyüten ekip.">
       <ContentPending note="Ekip üyelerinin fotoğrafları, unvanları ve kısa özgeçmişleri müşteriden gelince eklenecek." />
     </PageShell>
   );

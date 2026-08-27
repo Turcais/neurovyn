@@ -4,39 +4,40 @@ import { notFound } from "next/navigation";
 import { Check, MoveRight } from "lucide-react";
 import { PageShell } from "@/components/layout/page-shell";
 import { ButtonLink } from "@/components/ui/button";
-import { valueAreaDetails } from "@/lib/content";
-import { valueAreas } from "@/lib/site";
+import { getValueArea, getValueAreas } from "@/lib/value-areas";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
-  return valueAreas.map((area) => ({ slug: area.slug }));
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const areas = await getValueAreas();
+  return areas.map((area) => ({ slug: area.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const area = valueAreas.find((a) => a.slug === slug);
+  const area = await getValueArea(slug);
   if (!area) return {};
-  return { title: area.title, description: valueAreaDetails[slug]?.lead };
+  return { title: area.title, description: area.lead };
 }
 
 export default async function ValueAreaPage({ params }: Props) {
   const { slug } = await params;
-  const area = valueAreas.find((a) => a.slug === slug);
+  const [area, allAreas] = await Promise.all([getValueArea(slug), getValueAreas()]);
   if (!area) notFound();
 
-  const detail = valueAreaDetails[slug];
-  const others = valueAreas.filter((a) => a.slug !== slug);
+  const others = allAreas.filter((item) => item.slug !== slug);
 
   return (
-    <PageShell title={area.title} lead={detail?.lead}>
-      {detail && (
+    <PageShell title={area.title} lead={area.lead}>
+      {area.forWhom.length > 0 && (
         <section className="rounded-2xl border border-border bg-bg-subtle p-8 sm:p-10">
           <h2 className="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
             Kimler için?
           </h2>
           <ul className="mt-6 space-y-3.5">
-            {detail.forWhom.map((item) => (
+            {area.forWhom.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <Check
                   className="mt-0.5 size-[18px] shrink-0"
@@ -72,33 +73,35 @@ export default async function ValueAreaPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mt-20 border-t border-border pt-10">
-        <h2 className="font-display text-xs font-bold uppercase tracking-[0.18em] text-fg-faint">
-          Diğer alanlar
-        </h2>
-        <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-          {others.map((other) => {
-            const Icon = other.icon;
-            return (
-              <li key={other.slug}>
-                <Link
-                  href={`/alanlarimiz/${other.slug}`}
-                  className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3.5 transition-colors hover:border-primary/50"
-                >
-                  <Icon
-                    className="size-[19px] shrink-0"
-                    style={{ color: `var(${other.colorVar})` }}
-                    aria-hidden
-                  />
-                  <span className="font-display text-[14px] font-semibold text-ink">
-                    {other.title}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      {others.length > 0 && (
+        <section className="mt-20 border-t border-border pt-10">
+          <h2 className="font-display text-xs font-bold uppercase tracking-[0.18em] text-fg-faint">
+            Diğer alanlar
+          </h2>
+          <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            {others.map((other) => {
+              const Icon = other.icon;
+              return (
+                <li key={other.slug}>
+                  <Link
+                    href={`/alanlarimiz/${other.slug}`}
+                    className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3.5 transition-colors hover:border-primary/50"
+                  >
+                    <Icon
+                      className="size-[19px] shrink-0"
+                      style={{ color: `var(${other.colorVar})` }}
+                      aria-hidden
+                    />
+                    <span className="font-display text-[14px] font-semibold text-ink">
+                      {other.title}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
     </PageShell>
   );
 }

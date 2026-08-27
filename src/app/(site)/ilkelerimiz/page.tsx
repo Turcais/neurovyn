@@ -21,8 +21,7 @@ const cycle = [
 
 export default function PrinciplesPage() {
   return (
-    <PageShell
-      title="Neurovyn İlkeleri"
+    <PageShell cmsKey="ilkelerimiz"       title="Neurovyn İlkeleri"
       lead="Anlamakla başlar, etkileşimle dönüşür, gelişimle devam eder. Bu on sekiz cümle, Neurovyn'in nasıl düşündüğünü anlatır."
     >
       {/* Çalışma ilkeleri */}

@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { ChevronRight, MoveRight } from "lucide-react";
-import { pillars, valueAreas } from "@/lib/site";
+import { pillars } from "@/lib/site";
+import { getValueAreas } from "@/lib/value-areas";
 
-export function WhatWeDo() {
+export async function WhatWeDo() {
+  const valueAreas = await getValueAreas();
+
   return (
     <section className="mx-auto grid max-w-[86rem] gap-6 px-6 py-6 lg:grid-cols-2 lg:gap-7">
       {/* ---------- NE YAPIYORUZ? ---------- */}

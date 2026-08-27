@@ -1,4 +1,4 @@
-import { contact, whatsappHref } from "@/lib/site";
+import { getSettings } from "@/lib/settings";
 import { cn } from "@/lib/utils";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -14,13 +14,14 @@ function WhatsAppIcon({ className }: { className?: string }) {
  * Sabit WhatsApp butonu.
  * Mobilde kucuk, masaustunde etiketli. Yeni sekmede acilir.
  */
-export function WhatsAppButton({ className }: { className?: string }) {
+export async function WhatsAppButton({ className }: { className?: string }) {
+  const settings = await getSettings();
   return (
     <a
-      href={whatsappHref}
+      href={settings.whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`WhatsApp'tan yazın: ${contact.phone}`}
+      aria-label={`WhatsApp'tan yazın: ${settings.phone}`}
       className={cn(
         "fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 rounded-full",
         "bg-[#25D366] px-4 py-3.5 text-[14px] font-semibold text-[#04301a] shadow-lg shadow-black/20",
@@ -35,10 +36,11 @@ export function WhatsAppButton({ className }: { className?: string }) {
 }
 
 /** Sayfa icinde kullanilan satir ici WhatsApp baglantisi. */
-export function WhatsAppLink({ className }: { className?: string }) {
+export async function WhatsAppLink({ className }: { className?: string }) {
+  const settings = await getSettings();
   return (
     <a
-      href={whatsappHref}
+      href={settings.whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(

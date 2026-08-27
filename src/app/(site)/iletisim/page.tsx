@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/page-shell";
 import { WhatsAppLink } from "@/components/layout/whatsapp-button";
-import { contactLinks } from "@/lib/site";
+import { getSettings } from "@/lib/settings";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
@@ -10,10 +10,11 @@ export const metadata: Metadata = {
     "Sorularınız, iş birlikleri ve görüşme talepleriniz için Neurovyn ile iletişime geçin.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSettings();
+
   return (
-    <PageShell
-      title="Bize Ulaşın"
+    <PageShell cmsKey="iletisim"       title="Bize Ulaşın"
       lead="Sorularınız, iş birlikleri ve görüşme talepleriniz için bize yazın. Genellikle iki iş günü içinde dönüş yapıyoruz."
     >
       <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
@@ -26,7 +27,7 @@ export default function ContactPage() {
             İletişim Bilgileri
           </h2>
           <ul className="mt-6 space-y-4">
-            {contactLinks.map((item) => {
+            {settings.contactLinks.map((item) => {
               const Icon = item.icon;
               const body = (
                 <>

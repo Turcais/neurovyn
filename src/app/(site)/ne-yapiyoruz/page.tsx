@@ -28,8 +28,7 @@ const pillarDetails: Record<string, string[]> = {
 
 export default function WhatWeDoPage() {
   return (
-    <PageShell
-      title="Ne Yapıyoruz"
+    <PageShell cmsKey="ne-yapiyoruz"       title="Ne Yapıyoruz"
       lead="Bilimle, birlikte, bütüncül bir yaklaşım. İnsanı bütüncül olarak ele alır, yaşamıyla ve çevresiyle birlikte anlarız."
     >
       {/* Üç sütun */}

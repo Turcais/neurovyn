@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import { PageShell } from "@/components/layout/page-shell";
-import { valueAreaDetails } from "@/lib/content";
-import { valueAreas } from "@/lib/site";
+import { getValueAreas } from "@/lib/value-areas";
 
 export const metadata: Metadata = {
   title: "Değer Ürettiğimiz Alanlar",
   description: "Bireylerden kurumlara kadar yaşamın her alanında değer üretiyoruz.",
 };
 
-export default function ValueAreasPage() {
+export const revalidate = 3600;
+
+export default async function ValueAreasPage() {
+  const valueAreas = await getValueAreas();
+
   return (
     <PageShell
       title="Değer Ürettiğimiz Alanlar"
@@ -19,7 +22,6 @@ export default function ValueAreasPage() {
       <ul className="grid gap-4 md:grid-cols-2">
         {valueAreas.map((area) => {
           const Icon = area.icon;
-          const detail = valueAreaDetails[area.slug];
           return (
             <li key={area.slug}>
               <Link
@@ -43,9 +45,9 @@ export default function ValueAreasPage() {
                   {area.title}
                 </h2>
 
-                {detail && (
+                {area.lead && (
                   <p className="mt-3 flex-1 text-[14.5px] leading-[1.8] text-fg-muted">
-                    {detail.lead}
+                    {area.lead}
                   </p>
                 )}
 

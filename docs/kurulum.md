@@ -15,13 +15,12 @@ Ayrı bir uygulama kurmanıza veya ayrı ücret ödemenize gerek yok.
 
 ### 1.1 Hesap ve proje açın
 
-1. [sanity.io/manage](https://www.sanity.io/manage) adresine gidin
-2. Google veya GitHub ile ücretsiz kaydolun
-3. **Create new project** deyin
-   - Project name: `Neurovyn`
-   - Dataset: `production` (varsayılan, değiştirmeyin)
-   - Plan: **Free** yeterli
-4. Proje açıldıktan sonra **Project ID**'yi kopyalayın (örnek: `a1b2c3d4`)
+Proje açıldı. Bilgiler:
+
+- **Project ID:** `ce56iiih`
+- **Dataset:** `production`
+
+Yeni bir proje açmanıza gerek yok; bu adım tamamlandı.
 
 ### 1.2 Yazma anahtarı üretin
 
@@ -98,7 +97,7 @@ cp .env.example .env.local
 İçini doldurun:
 
 ```
-NEXT_PUBLIC_SANITY_PROJECT_ID=buraya_proje_kimligi
+NEXT_PUBLIC_SANITY_PROJECT_ID=ce56iiih
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_WRITE_TOKEN=buraya_yazma_anahtari
 RESEND_API_KEY=buraya_resend_anahtari
@@ -136,19 +135,26 @@ npm run dev
 
 | Bölüm | Ne yapılabilir | Durum |
 |---|---|---|
-| **Site Ayarları** | Telefon, e-posta, WhatsApp, adres, sosyal medya, footer metni, slogan | Panel hazır |
-| **Sayfa Metinleri** | Her sayfanın başlığı, giriş metni ve serbest metni | Panel hazır |
-| **Değer Ürettiğimiz Alanlar** | Altı alanın başlığı, açıklaması, "kimler için" listesi, rengi, ikonu | Panel hazır |
-| **Blog Yazıları** | Yazı ekleme, düzenleme, görsel yükleme, kategori | **Siteye bağlı** |
-| **Blog Kategorileri** | Kategori ekleme | **Siteye bağlı** |
-| **Gelen Mesajlar** | Formdan gelen mesajları okuma, durum işaretleme, not alma | **Siteye bağlı** |
+| **Site Ayarları** | Telefon, e-posta, WhatsApp, adres, sosyal medya, footer metni, slogan | Bağlı |
+| **Sayfa Metinleri** | 11 sayfanın başlığı, giriş metni ve serbest metni | Bağlı |
+| **Değer Ürettiğimiz Alanlar** | Altı alanın başlığı, açıklaması, "kimler için" listesi, rengi, ikonu | Bağlı |
+| **Blog Yazıları** | Yazı ekleme, düzenleme, görsel yükleme, kategori | Bağlı |
+| **Blog Kategorileri** | Kategori ekleme | Bağlı |
+| **Gelen Mesajlar** | Formdan gelen mesajları okuma, durum işaretleme, not alma | Bağlı |
 
-**"Panel hazır" ne demek:** Şema yazıldı, panelde alan görünüyor ve
-düzenlenebiliyor — ama site şu an bu içeriği hâlâ koddaki dosyalardan
-(`src/lib/content.ts`, `src/lib/site.ts`) okuyor. Bağlama işi sıradaki adım.
+### Panelde kayıt yoksa ne olur?
 
-Bu kademeli geçiş bilinçli bir tercih: site CMS kurulmadan da çalışır,
-CMS'te kayıt yoksa koddaki metne düşer. Böylece hiçbir aşamada site bozulmaz.
+Site koddaki hazır metne düşer ve normal görünmeye devam eder.
+Bir alanı panelden doldurduğunuzda o alan CMS'ten gelmeye başlar;
+dokunmadıklarınız eski hâlinde kalır.
+
+Yani panel **boş bırakılabilir** — site yine çalışır. Bu, hiçbir aşamada
+sitenin bozulmamasını sağlar.
+
+### Değişiklik ne zaman görünür?
+
+Site içeriği **saatte bir** tazeler. Hemen görmek için Vercel'de
+**Redeploy** deyin.
 
 ---
 

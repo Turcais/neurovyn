@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <PageShell title="Kullanım Koşulları" lead="Bu sitenin kullanımına ilişkin koşullar.">
+    <PageShell cmsKey="kullanim-kosullari" title="Kullanım Koşulları" lead="Bu sitenin kullanımına ilişkin koşullar.">
       <ContentPending note="Kullanım koşulları metni hukuki onaydan sonra eklenecek." />
     </PageShell>
   );

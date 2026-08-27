@@ -21,7 +21,7 @@ const cycle = [
 
 export default function MissionPage() {
   return (
-    <PageShell title="Misyonumuz" lead={missionStatement}>
+    <PageShell cmsKey="misyonumuz" title="Misyonumuz" lead={missionStatement}>
       <SectionHeading
         eyebrow="Neurovyn'in 10 Temel İlkesi"
         title="Bilimle anlar, ekosistemiyle bütünleştirir, birlikte dönüştürürüz."

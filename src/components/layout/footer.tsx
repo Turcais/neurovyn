@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { BrandTreeImage } from "@/components/brand/tree-image";
 import { Logo } from "@/components/brand/logo";
-import { contactLinks, footerNav, site, socialLinks } from "@/lib/site";
+import { footerNav } from "@/lib/site";
+import { getSettings } from "@/lib/settings";
 
 /** Footer'in sag alt kosesinde soluk duran marka agaci. */
 function FooterFlourish() {
@@ -15,7 +16,8 @@ function FooterFlourish() {
   );
 }
 
-export function Footer() {
+export async function Footer() {
+  const settings = await getSettings();
   const year = new Date().getFullYear();
   const columns = [footerNav.quick, footerNav.corporate];
 
@@ -28,9 +30,9 @@ export function Footer() {
           {/* Marka */}
           <div>
             <Logo size="sm" tone="onDark" />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-footer-muted">{site.footerBlurb}</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-footer-muted">{settings.footerBlurb}</p>
             <ul className="mt-6 flex items-center gap-2.5">
-              {socialLinks.map((social) => {
+              {settings.socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
                   <li key={social.label}>
@@ -74,7 +76,7 @@ export function Footer() {
               Bize Ulaşın
             </h2>
             <ul className="mt-5 space-y-3.5">
-              {contactLinks.map((item) => {
+              {settings.contactLinks.map((item) => {
                 const Icon = item.icon;
                 const body = (
                   <>
@@ -100,7 +102,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs text-footer-muted">
-            © {year} {site.name}. Tüm hakları saklıdır.
+            © {year} {settings.brandName}. Tüm hakları saklıdır.
           </p>
         </div>
       </div>

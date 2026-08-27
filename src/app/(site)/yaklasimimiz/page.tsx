@@ -21,8 +21,7 @@ const cycleColors = [
 
 export default function ApproachPage() {
   return (
-    <PageShell
-      title="Yaklaşımımız"
+    <PageShell cmsKey="yaklasimimiz"       title="Yaklaşımımız"
       lead="İnsanı bütüncül olarak ele alır, yaşamıyla ve çevresiyle birlikte anlarız. Güçlü yönlerini görünür kılar, gelişim potansiyelini ortaya çıkarır ve yaşamını bilinçli şekilde tasarlamasına rehberlik ederiz."
     >
       {/* Yaşam Döngüsü */}
