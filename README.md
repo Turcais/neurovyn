@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Neurovyn
 
-## Getting Started
+**Nöroyaşam Tasarımı** — kurumsal tanıtım sitesi ve blog.
 
-First, run the development server:
+Bilimle anlarız • Birlikte tasarlarız
+
+## Teknoloji
+
+| Katman | Seçim |
+|---|---|
+| Framework | Next.js 16 (App Router) + TypeScript |
+| Stil | Tailwind CSS v4 |
+| İçerik yönetimi | Sanity — `/studio` adresinde gömülü panel |
+| Form e-postası | Resend |
+| Hosting | Vercel |
+
+## Geliştirme
 
 ```bash
+npm install
+cp .env.example .env.local   # değerleri doldurun
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Site: http://localhost:3000
+- Yönetim paneli: http://localhost:3000/studio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ortam değişkenlerinin nasıl alınacağı [docs/kurulum.md](docs/kurulum.md) içinde adım adım anlatılıyor.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Sayfalar
 
-## Learn More
+Ana Sayfa · Vizyonumuz · Misyonumuz · Ne Yapıyoruz · Değer Ürettiğimiz Alanlar (+6 alt sayfa) · Hakkımızda · Manifesto · İlkelerimiz · Yaklaşımımız · Ekibimiz · Blog · Bize Ulaşın · Gizlilik Politikası · Kullanım Koşulları
 
-To learn more about Next.js, take a look at the following resources:
+## Belgeler
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [docs/brand.md](docs/brand.md) — marka kararları, renk sistemi, tipografi, görsel varlıklar
+- [docs/kurulum.md](docs/kurulum.md) — Sanity, Resend ve Vercel kurulum adımları
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Erişilebilirlik
 
-## Deploy on Vercel
+Marka nöroçeşitlilik üzerine kurulu; erişilebilirlik temel gerekliliktir.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- WCAG 2.2 AA kontrast hedefi — açık ve koyu temada doğrulandı
+- `prefers-reduced-motion` desteği
+- Klavye navigasyonu ve görünür odak halkası
+- Her sayfada "İçeriğe geç" atlama bağlantısı
+- Gövde metinlerinde 68 karakterlik okuma genişliği
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Komutlar
+
+```bash
+npm run dev     # geliştirme sunucusu
+npm run build   # üretim derlemesi
+npm run lint    # kod denetimi
+```
