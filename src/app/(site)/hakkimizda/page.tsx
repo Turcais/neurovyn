@@ -76,10 +76,22 @@ export default function AboutPage() {
           {founderStory.closing}
         </p>
 
-        <p className="mt-8 font-serif text-[19px] italic text-ink">
-          Neurovyn, birlikte anlamanın, birlikte dönüşmenin ve birlikte gelişmenin yaşam
-          felsefesidir.
+        <p className="prose-measure mt-7 text-[14px] italic leading-[1.8] text-fg-muted">
+          {founderStory.signatureNote}
         </p>
+
+        {/* İmza: ad en altta, ünvanlar altında küçük puntoda */}
+        <div className="mt-9">
+          <p className="font-display text-[18px] font-bold text-ink">
+            {founderStory.signature.name}
+          </p>
+          <p className="mt-1 font-display text-[15px] font-semibold text-ink">
+            {founderStory.signature.role}
+          </p>
+          <p className="mt-1.5 text-[13px] italic text-fg-muted">
+            {founderStory.signature.credentials}
+          </p>
+        </div>
       </section>
 
       {/* Logomuzun anlamı */}

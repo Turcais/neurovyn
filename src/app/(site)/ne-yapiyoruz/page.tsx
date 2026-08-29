@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/page-shell";
 import { SectionHeading, StepCard } from "@/components/ui/section";
-import { applicationModes, methodologySteps } from "@/lib/content";
-import { pillars } from "@/lib/site";
+import { applicationModes, methodologySteps, servicesLead } from "@/lib/content";
+import { pillars, services } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Ne Yapıyoruz",
@@ -29,8 +29,30 @@ const pillarDetails: Record<string, string[]> = {
 export default function WhatWeDoPage() {
   return (
     <PageShell cmsKey="ne-yapiyoruz"       title="Ne Yapıyoruz"
-      lead="Bilimle, birlikte, bütüncül bir yaklaşım. İnsanı bütüncül olarak ele alır, yaşamıyla ve çevresiyle birlikte anlarız."
+      lead={servicesLead}
     >
+      {/* Hizmet başlıkları */}
+      <ul className="mb-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service) => {
+          const Icon = service.icon;
+          return (
+            <li
+              key={service.slug}
+              className="flex items-center gap-3.5 rounded-xl border border-border bg-surface px-5 py-4"
+            >
+              <Icon
+                className="size-[21px] shrink-0"
+                style={{ color: `var(${service.colorVar})` }}
+                aria-hidden
+              />
+              <span className="font-display text-[14.5px] font-semibold text-ink">
+                {service.title}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+
       {/* Üç sütun */}
       <div className="space-y-5">
         {pillars.map((pillar) => {

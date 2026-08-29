@@ -21,6 +21,7 @@ export type PageKey =
   | "vizyonumuz"
   | "misyonumuz"
   | "ne-yapiyoruz"
+  | "bilimsel-temelimiz"
   | "yaklasimimiz"
   | "ilkelerimiz"
   | "manifesto"

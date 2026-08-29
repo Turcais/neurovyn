@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight, MoveRight } from "lucide-react";
+import { valueAreasLead } from "@/lib/content";
 import { pillars } from "@/lib/site";
 import { getValueAreas } from "@/lib/value-areas";
 
@@ -70,7 +71,7 @@ export async function WhatWeDo() {
           Değer Ürettiğimiz Alanlar
         </h2>
         <p className="mt-4 max-w-md text-[15px] leading-[1.7] text-fg-muted">
-          Bireylerden kurumlara kadar yaşamın her alanında değer üretiyoruz.
+          {valueAreasLead}
         </p>
 
         <ul className="mt-6 flex-1 space-y-2.5">

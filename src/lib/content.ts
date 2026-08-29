@@ -6,7 +6,7 @@
 /* ---------------- Vizyon ---------------- */
 
 export const visionStatement =
-  "Neurovyn, bireyi değiştirmeyi değil; bireyin kendini ve ekosistemini anlayarak yaşamını bilinçli şekilde tasarlamasını destekleyen bilim temelli bir Nöroyaşam Tasarımı sistemidir.";
+  "Her bireyin farklılığının değer gördüğü, anlaşıldığı, kabul edildiği ve desteklendiği; kendi potansiyeliyle ve yaşam ekosistemiyle uyum içinde gelişebildiği bir gelecek.";
 
 export const visionPillars = [
   {
@@ -52,7 +52,7 @@ export const corePrinciple = [
 /* ---------------- Misyon: 10 Temel İlke ---------------- */
 
 export const missionStatement =
-  "Bireyi anlamak, ekosistemini anlamlandırmak ve yaşamını birlikte tasarlamak. Bilimle anlar, ekosistemiyle bütünleştirir, birlikte dönüştürürüz.";
+  "Bireyin kendini ve yaşamını anlamasına, farklılıklarını ve potansiyelini keşfetmesine; yaşam ekosistemiyle birlikte daha uyumlu, anlamlı ve sürdürülebilir bir yaşam tasarlamasına rehberlik etmek.";
 
 export const tenPrinciples = [
   { title: "Her beyin benzersizdir.", body: "Her bireyin nörolojik yapısı kendine özgüdür." },
@@ -126,6 +126,9 @@ export const lifeCycle = [
   { title: "Takip Sistemi", body: "İlerlemeyi düzenli izler, ölçer ve planı canlı tutarız. Gelişim, yaşayan bir süreçtir." },
 ] as const;
 
+export const lifeCycleLead =
+  "Değerlendirme, planlama, uygulama ve takip süreçlerinden oluşan “Neurovyn Yaşam Döngüsü” çalışma modelimizdir. Bu döngü süreklidir ve her adım bir sonraki aşamayı etkiler.";
+
 export const approachClosing =
   "Yöntemler, araçlar ve uygulamalar değişebilir; ancak yaklaşımımız değişmez. Çünkü bizim için gelişim, bireyi anlamakla başlar; yaşamı bütüncül bir bakış açısıyla değerlendirmek ve bu yolculuğu birlikte tasarlamakla güçlenir.";
 
@@ -133,56 +136,112 @@ export const approachClosing =
 
 export type ValueAreaDetail = { lead: string; forWhom: string[] };
 
+export const valueAreasLead =
+  "Bireyin kendisiyle, çevresiyle ve yaşam ekosistemiyle kurduğu ilişkiyi güçlendirerek; farkındalık, uyum ve sürdürülebilir gelişimi destekliyoruz.";
+
+/* TODO: asagidaki aciklamalar taslaktir; musteri onayindan sonra
+   yonetim panelinden guncellenecek. */
 export const valueAreaDetails: Record<string, ValueAreaDetail> = {
-  "bireysel-yasam-tasarimi": {
-    lead: "Kendi yaşamını daha bilinçli, dengeli ve anlamlı biçimde tasarlamak isteyen yetişkinlerle çalışırız. Güçlü yönlerinizi görünür kılar, yaşam alanlarınız arasında sürdürülebilir bir denge kurmanıza rehberlik ederiz.",
+  "bireysel-gelisim-ve-farkindalik": {
+    lead: "Bireyin kendi işleyişini tanımasına, güçlü yönlerini görmesine ve yaşamına bilinçli bir yön vermesine eşlik ederiz.",
     forWhom: [
-      "Yaşamında yön ve anlam arayan yetişkinler",
-      "Kariyer, ilişkiler ve iç dünya arasında denge kurmak isteyenler",
-      "Kendi işleyişini daha iyi anlamak isteyen bireyler",
+      "Kendini daha iyi anlamak isteyen yetişkinler",
+      "Yaşamında yön ve anlam arayanlar",
+      "Farkındalığını derinleştirmek isteyenler",
     ],
   },
-  "egitim-ve-ogrenci-gelisimi": {
-    lead: "Öğrencinin nasıl öğrendiğini anlar; çalışma düzenini, motivasyonunu ve öğrenme ortamını birlikte tasarlarız. Odak noktamız not değil, öğrenmenin kendisidir.",
+  "egitim-ve-ogrenme": {
+    lead: "Öğrenmenin nasıl gerçekleştiğini bireyin kendine özgü işleyişi üzerinden ele alır; çalışma düzenini ve öğrenme ortamını birlikte tasarlarız.",
     forWhom: [
-      "Ortaokul, lise ve üniversite öğrencileri",
-      "Çalışma düzeni ve odaklanma güçlüğü yaşayanlar",
-      "Sınav sürecinde destek arayan öğrenciler ve aileleri",
+      "Öğrenciler ve aileleri",
+      "Çalışma düzeni ve odaklanmada destek arayanlar",
+      "Öğrenme ortamını yeniden kurmak isteyen eğitimciler",
     ],
   },
-  "norocesitli-bireylerle-gelisim": {
-    lead: "Nöroçeşitliliği bir eksiklik değil, çeşitlilik olarak ele alırız. Bireyin kendine özgü işleyişiyle çevresi arasındaki uyumu güçlendirmeye odaklanırız.",
-    forWhom: [
-      "Nöroçeşitli çocuklar, gençler ve yetişkinler",
-      "Tanıyı bir etiket değil, bir bilgi olarak ele almak isteyenler",
-      "Çevresiyle uyum ve kabul arayışındaki bireyler",
-    ],
-  },
-  "aile-ve-ebeveyn-rehberligi": {
-    lead: "Aileyi sürecin doğal bir parçası olarak görürüz. Ebeveynin çocuğunu anlamasını, iletişimi güçlendirmeyi ve evdeki yaşam düzenini birlikte tasarlamayı destekleriz.",
+  "aile-ve-ebeveynlik": {
+    lead: "Aileyi gelişimin doğal bir parçası olarak görür; iletişimi, ev içi düzeni ve karşılıklı anlayışı güçlendirmeye çalışırız.",
     forWhom: [
       "Çocuğunu daha iyi anlamak isteyen ebeveynler",
-      "Ev içi düzen, sınırlar ve iletişimde destek arayan aileler",
+      "Ev içi düzen ve iletişimde destek arayan aileler",
       "Okul ile aile arasında köprü kurmak isteyenler",
     ],
   },
-  "egitimci-ve-uzman-gelisimi": {
-    lead: "Eğitimciler ve alan uzmanları için nöroyaşam bakış açısını uygulamaya dönüştüren eğitimler sunarız. Bilimsel bilgiyi sınıfın ve seansın içine taşırız.",
+  "norocesitlilik-ve-kapsayicilik": {
+    lead: "Nöroçeşitliliği düzeltilmesi gereken bir kusur değil, anlaşılması gereken bir özellik olarak ele alırız. Odağımız birey ile çevresi arasındaki uyumdur.",
     forWhom: [
-      "Öğretmenler ve okul rehberlik uzmanları",
-      "Psikolog, danışman ve terapistler",
-      "Kendi uygulamasını bütüncül bir çerçeveye oturtmak isteyen uzmanlar",
+      "Nöroçeşitli çocuklar, gençler ve yetişkinler",
+      "Tanıyı etiket değil, bilgi olarak ele almak isteyenler",
+      "Kapsayıcı ortam kurmak isteyen kurumlar",
     ],
   },
-  "kurumsal-egitim-ve-danismanlik": {
-    lead: "Kurumlarda kapsayıcı, nöroçeşitliliğe duyarlı bir çalışma kültürü kurmayı destekleriz. Ekiplerin farklı işleyişleri anlamasını ve birlikte üretmesini kolaylaştırırız.",
+  "iliskiler-ve-sosyal-yasam": {
+    lead: "Yaşam; ilişkiler, bağlar ve anlam üzerine kurulur. Bireyin sosyal çevresiyle kurduğu ilişkiyi anlamlandırmasına ve güçlendirmesine destek oluruz.",
     forWhom: [
+      "İlişkilerinde daha sağlıklı bağlar kurmak isteyenler",
+      "Sosyal ortamlarda zorlanan bireyler",
+      "Aidiyet ve kabul arayışındaki kişiler",
+    ],
+  },
+  "kariyer-ve-yetiskin-yasami": {
+    lead: "Yetenekleri, ilgi alanlarını ve yaşam koşullarını birlikte değerlendirir; kariyerin bireyin bütününe uyumlu olmasına çalışırız.",
+    forWhom: [
+      "Kariyerinde yön arayan yetişkinler",
+      "İş yaşamı ile özel yaşam arasında denge kurmak isteyenler",
+      "Kapsayıcı çalışma kültürü kurmak isteyen ekipler",
+    ],
+  },
+  "yasam-ekosistemleri": {
+    lead: "Aile, okul, iş, sosyal çevre ve fiziksel ortamı bir bütün olarak haritalar; bireyi çevreleyen sistemin destekleyici hâle gelmesine çalışırız.",
+    forWhom: [
+      "Yaşam düzenini bütüncül olarak gözden geçirmek isteyenler",
       "Eğitim kurumları ve okullar",
-      "İnsan kaynakları ve yönetici ekipleri",
-      "Kapsayıcı çalışma kültürü kurmak isteyen şirketler",
+      "Kurumlar ve iş dünyası",
     ],
   },
 };
+
+/* ---------------- Ne Yapıyoruz: hizmet açıklamaları ---------------- */
+
+export const servicesLead =
+  "Bireyi kendi yaşam ekosistemi içinde ele alıyor; kendini anlamasına, ihtiyaçlarını ve potansiyelini keşfetmesine, gelişim alanlarını belirlemesine ve yaşamını kendi ihtiyaçları doğrultusunda tasarlamasına rehberlik ediyoruz.";
+
+/* ---------------- Bilimsel Temelimiz ---------------- */
+
+export const scientificBasisLead =
+  "Neurovyn; bireyi, yaşamını ve içinde bulunduğu ekosistemi bütüncül biçimde ele alan disiplinlerarası bir yaklaşımdır.";
+
+export const scientificBasis = [
+  {
+    title: "Nörobilim",
+    body: "Beyin, biliş, dikkat, duygu ve davranış süreçlerine ilişkin bilimsel bilgiden yararlanırız.",
+    colorVar: "--area-egitim",
+  },
+  {
+    title: "Psikoloji",
+    body: "Bireyin düşünce, duygu, davranış ve gelişim süreçlerini anlamlandırmak için psikolojik yaklaşımlardan yararlanırız.",
+    colorVar: "--area-toplum",
+  },
+  {
+    title: "Eğitim Bilimleri",
+    body: "Öğrenme, gelişim ve bireysel farklılıklara uygun öğrenme ortamlarının tasarımından yararlanırız.",
+    colorVar: "--area-kariyer",
+  },
+  {
+    title: "Gelişim Bilimleri",
+    body: "Bireyin yaşam boyunca değişimini, gelişimini ve farklı dönemlerdeki ihtiyaçlarını ele alırız.",
+    colorVar: "--area-gelisim",
+  },
+  {
+    title: "Sosyal ve Davranış Bilimleri",
+    body: "Bireyin ilişkilerini, sosyal çevresini ve davranışlarının içinde bulunduğu bağlamla ilişkisini değerlendiririz.",
+    colorVar: "--area-saglik",
+  },
+  {
+    title: "Sistem ve Ekosistem Yaklaşımı",
+    body: "Bireyi çevresinden bağımsız değil; aile, eğitim, iş, sosyal çevre ve yaşam koşullarıyla birlikte ele alırız.",
+    colorVar: "--area-anlam",
+  },
+] as const;
 
 /* ---------------- Manifesto ---------------- */
 
@@ -252,6 +311,14 @@ export const founderStory = {
   ],
   closing:
     "Benim için her birey değerlidir. Her bireyin içinde keşfedilmeyi bekleyen bir potansiyel vardır. Ve doğru anlaşılan, kabul gören ve desteklenen her bireyin; kendi yaşam sistemiyle uyum kurduğunda dönüşebileceğine inanıyorum.",
+  /** Imzanin hemen ustunde, kucuk ve italik duran ozet cumle. */
+  signatureNote:
+    "Bireysel koçluk ve nöroçeşitlilik alanlarındaki eğitimlerini; psikoloji ve mimarlık-tasarım bakışıyla birleştirerek Neurovyn Nöroyaşam Tasarımı yaklaşımını geliştirmektedir.",
+  signature: {
+    name: "Ebru Şahin Mercimek",
+    role: "Neurovyn Kurucusu & Nöroyaşam Tasarımcısı",
+    credentials: "Dr. Mimar · ICF Koçluk · Psikoloji Öğrencisi",
+  },
 } as const;
 
 /* ---------------- Marka Rehberi v1.0: Yaşam Modeli ---------------- */
@@ -272,22 +339,26 @@ export const lifeModel = {
       title: "Zihin",
       body: "Düşünme, öğrenme, farkındalık, duygular ve potansiyelin merkezidir.",
       colorVar: "--area-egitim",
+      icon: "brain",
     },
     {
       title: "Beden",
       body: "Yaşam enerjisini, bedensel sağlığı ve sinir sistemini besleyen temel kaynaktır.",
       colorVar: "--area-saglik",
+      icon: "heart",
     },
     {
       title: "Ekosistem",
       body: "Aile, eğitim, iş, sosyal çevre ve fiziksel ortam bireyi saran destekleyici ağdır.",
       colorVar: "--area-toplum",
+      icon: "ecosystem",
     },
   ],
   outcome: {
     title: "Kalıcı ve Sürdürülebilir Gelişim",
     body: "Kısa süreli çözümler değil; yaşam boyu süren, anlamlı ve sürdürülebilir gelişim.",
     colorVar: "--area-anlam",
+    icon: "growth",
   },
 } as const;
 
@@ -303,7 +374,7 @@ export const brandClosing =
 /* ---------------- Logo Anlamı ---------------- */
 
 export const logoMeaning = [
-  { symbol: "Beyin şeklindeki ağaç", meaning: "Öğrenme, potansiyel, yaşam ve sürekli gelişim.", colorVar: "--area-anlam" },
+  { symbol: "Işıldayan beyin şeklinde ağaç", meaning: "Öğrenme, potansiyel, yaşam ve sürekli gelişim.", colorVar: "--area-anlam" },
   { symbol: "Mor", meaning: "Zihin, bilim ve farkındalık.", colorVar: "--area-egitim" },
   { symbol: "Yeşil", meaning: "Ekosistem, yaşam, doğa ve büyüme.", colorVar: "--area-toplum" },
   { symbol: "Altın gövde", meaning: "Beden, denge ve yaşam enerjisi.", colorVar: "--area-anlam" },

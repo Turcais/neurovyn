@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import { PageShell } from "@/components/layout/page-shell";
+import { valueAreasLead } from "@/lib/content";
 import { getValueAreas } from "@/lib/value-areas";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default async function ValueAreasPage() {
   return (
     <PageShell
       title="Değer Ürettiğimiz Alanlar"
-      lead="Bireylerden kurumlara kadar yaşamın her alanında değer üretiyoruz. Yöntemlerimiz alana göre değişir; yaklaşımımız değişmez."
+      lead={valueAreasLead}
     >
       <ul className="grid gap-4 md:grid-cols-2">
         {valueAreas.map((area) => {

@@ -6,8 +6,10 @@ import {
   BarChart3,
   BookOpen,
   Brain,
-  Building2,
+  Briefcase,
+  Compass,
   Eye,
+  FlaskConical,
   GraduationCap,
   HeartHandshake,
   Home,
@@ -17,9 +19,10 @@ import {
   MapPin,
   PencilRuler,
   Phone,
-  Presentation,
   ScanSearch,
   ShieldCheck,
+  Sparkles,
+  Sprout,
   Target,
   UserRound,
   Users,
@@ -73,6 +76,7 @@ export const mainNav: NavItem[] = [
   { label: "Misyonumuz", href: "/misyonumuz", icon: Target },
   { label: "Ne Yapıyoruz", href: "/ne-yapiyoruz", icon: Lightbulb },
   { label: "Değer Ürettiğimiz Alanlar", href: "/alanlarimiz", icon: UsersRound },
+  { label: "Bilimsel Temelimiz", href: "/bilimsel-temelimiz", icon: FlaskConical },
   { label: "Hakkımızda", href: "/hakkimizda", icon: UserRound },
   { label: "Blog", href: "/blog", icon: BookOpen },
 ];
@@ -124,12 +128,26 @@ export type ValueArea = {
 };
 
 export const valueAreas: ValueArea[] = [
-  { slug: "bireysel-yasam-tasarimi", title: "Bireysel Yaşam Tasarımı", icon: UserRound, colorVar: "--area-egitim" },
-  { slug: "egitim-ve-ogrenci-gelisimi", title: "Eğitim ve Öğrenci Gelişimi", icon: GraduationCap, colorVar: "--area-gelisim" },
-  { slug: "norocesitli-bireylerle-gelisim", title: "Nöroçeşitli Bireylerle Gelişim", icon: Brain, colorVar: "--area-toplum" },
-  { slug: "aile-ve-ebeveyn-rehberligi", title: "Aile ve Ebeveyn Rehberliği", icon: Users, colorVar: "--area-anlam" },
-  { slug: "egitimci-ve-uzman-gelisimi", title: "Eğitimci ve Uzman Gelişimi", icon: Presentation, colorVar: "--area-saglik" },
-  { slug: "kurumsal-egitim-ve-danismanlik", title: "Kurumsal Eğitim ve Danışmanlık", icon: Building2, colorVar: "--area-kariyer" },
+  { slug: "bireysel-gelisim-ve-farkindalik", title: "Bireysel Gelişim ve Farkındalık", icon: Sparkles, colorVar: "--area-egitim" },
+  { slug: "egitim-ve-ogrenme", title: "Eğitim ve Öğrenme", icon: GraduationCap, colorVar: "--area-gelisim" },
+  { slug: "aile-ve-ebeveynlik", title: "Aile ve Ebeveynlik", icon: Users, colorVar: "--area-aile" },
+  { slug: "norocesitlilik-ve-kapsayicilik", title: "Nöroçeşitlilik ve Kapsayıcılık", icon: Brain, colorVar: "--area-toplum" },
+  { slug: "iliskiler-ve-sosyal-yasam", title: "İlişkiler ve Sosyal Yaşam", icon: HeartHandshake, colorVar: "--area-saglik" },
+  { slug: "kariyer-ve-yetiskin-yasami", title: "Kariyer ve Yetişkin Yaşamı", icon: Briefcase, colorVar: "--area-kariyer" },
+  { slug: "yasam-ekosistemleri", title: "Yaşam Ekosistemleri", icon: Globe, colorVar: "--area-anlam" },
+];
+
+/** Ne Yapiyoruz sayfasindaki hizmet basliklari. */
+export type Service = { slug: string; title: string; icon: LucideIcon; colorVar: string };
+
+export const services: Service[] = [
+  { slug: "bireysel-yasam-koclugu", title: "Bireysel Yaşam Koçluğu", icon: Compass, colorVar: "--area-gelisim" },
+  { slug: "norocesitlilik-odakli-destek", title: "Nöroçeşitlilik Odaklı Destek", icon: Brain, colorVar: "--area-egitim" },
+  { slug: "ogrenci-ve-egitim-yasami", title: "Öğrenci ve Eğitim Yaşamı", icon: GraduationCap, colorVar: "--area-kariyer" },
+  { slug: "aile-ve-ebeveyn-destegi", title: "Aile ve Ebeveyn Desteği", icon: Users, colorVar: "--area-aile" },
+  { slug: "kariyer-ve-is-yasami", title: "Kariyer ve İş Yaşamı", icon: Briefcase, colorVar: "--area-saglik" },
+  { slug: "yasam-ekosistemi-calismalari", title: "Yaşam Ekosistemi Çalışmaları", icon: Globe, colorVar: "--area-toplum" },
+  { slug: "gelisim-ve-yasam-tasarimi", title: "Gelişim ve Yaşam Tasarımı", icon: Sprout, colorVar: "--area-anlam" },
 ];
 
 /* ---------------- Ana sayfa: guven seridi ---------------- */
@@ -152,6 +170,7 @@ export const footerNav = {
       { label: "Misyonumuz", href: "/misyonumuz" },
       { label: "Ne Yapıyoruz", href: "/ne-yapiyoruz" },
       { label: "Değer Ürettiğimiz Alanlar", href: "/alanlarimiz" },
+      { label: "Bilimsel Temelimiz", href: "/bilimsel-temelimiz" },
       { label: "Blog", href: "/blog" },
     ],
   },

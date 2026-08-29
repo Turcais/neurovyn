@@ -16,8 +16,8 @@ type LogoProps = {
 };
 
 const sizes = {
-  sm: { word: "text-[22px] sm:text-[26px]", mark: "size-[19px] sm:size-[23px]", tag: "text-[11px] sm:text-[12px]" },
-  lg: { word: "text-5xl sm:text-6xl lg:text-7xl", mark: "size-[42px] sm:size-[52px] lg:size-[62px]", tag: "text-xl sm:text-2xl" },
+  sm: { word: "text-[22px] sm:text-[26px]", mark: "size-[21px] sm:size-[25px]", tag: "text-[11px] sm:text-[12px]" },
+  lg: { word: "text-5xl sm:text-6xl lg:text-7xl", mark: "size-[46px] sm:size-[56px] lg:size-[67px]", tag: "text-xl sm:text-2xl" },
 } as const;
 
 export function Logo({ size = "sm", withTagline = true, asLink = true, tone = "default", className }: LogoProps) {
@@ -34,11 +34,10 @@ export function Logo({ size = "sm", withTagline = true, asLink = true, tone = "d
         )}
       >
         <span aria-hidden>Neur</span>
-        <span
-          className={cn("mx-[0.06em] inline-block", tone === "onDark" ? "text-secondary-bright" : "text-primary", s.mark)}
-          aria-hidden
-        >
-          <TreeMark />
+        <span className={cn("mx-[0.04em] inline-block", s.mark)} aria-hidden>
+          <TreeMark
+            treeClassName={tone === "onDark" ? "text-secondary-bright" : "text-secondary"}
+          />
         </span>
         <span aria-hidden>vyn</span>
         <span className="sr-only">{site.name}</span>

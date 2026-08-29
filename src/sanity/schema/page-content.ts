@@ -20,6 +20,7 @@ export const pageContent = defineType({
           { title: "Vizyonumuz", value: "vizyonumuz" },
           { title: "Misyonumuz", value: "misyonumuz" },
           { title: "Ne Yapıyoruz", value: "ne-yapiyoruz" },
+          { title: "Bilimsel Temelimiz", value: "bilimsel-temelimiz" },
           { title: "Yaklaşımımız", value: "yaklasimimiz" },
           { title: "İlkelerimiz", value: "ilkelerimiz" },
           { title: "Manifesto", value: "manifesto" },

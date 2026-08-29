@@ -1,4 +1,5 @@
 import { Plus, MoveRight } from "lucide-react";
+import { modelIcons, type ModelIconKey } from "@/components/brand/model-icons";
 import { lifeModel } from "@/lib/content";
 
 /**
@@ -21,13 +22,29 @@ export function LifeModel() {
           {lifeModel.parts.map((part, i) => (
             <div key={part.title} className="flex flex-1 items-center gap-4">
               <div className="flex-1 rounded-xl border border-border bg-surface p-5">
-                <h3
-                  className="font-display text-[17px] font-bold"
-                  style={{ color: `var(${part.colorVar})` }}
-                >
-                  {part.title}
-                </h3>
-                <p className="mt-2 text-[13.5px] leading-[1.7] text-fg-muted">{part.body}</p>
+                <div className="flex items-center gap-3">
+                  {(() => {
+                    const Icon = modelIcons[part.icon as ModelIconKey];
+                    return (
+                      <span
+                        className="inline-flex size-10 shrink-0 items-center justify-center rounded-full"
+                        style={{
+                          backgroundColor: `color-mix(in srgb, var(${part.colorVar}) 12%, transparent)`,
+                          color: `var(${part.colorVar})`,
+                        }}
+                      >
+                        <Icon className="size-6" />
+                      </span>
+                    );
+                  })()}
+                  <h3
+                    className="font-display text-[17px] font-bold"
+                    style={{ color: `var(${part.colorVar})` }}
+                  >
+                    {part.title}
+                  </h3>
+                </div>
+                <p className="mt-3 text-[13.5px] leading-[1.7] text-fg-muted">{part.body}</p>
               </div>
               {i < lifeModel.parts.length - 1 && (
                 <Plus className="hidden size-5 shrink-0 text-fg-faint lg:block" aria-hidden />
@@ -44,13 +61,29 @@ export function LifeModel() {
               backgroundColor: `color-mix(in srgb, var(${lifeModel.outcome.colorVar}) 7%, transparent)`,
             }}
           >
-            <h3
-              className="font-display text-[17px] font-bold leading-snug"
-              style={{ color: `var(${lifeModel.outcome.colorVar})` }}
-            >
-              {lifeModel.outcome.title}
-            </h3>
-            <p className="mt-2 text-[13.5px] leading-[1.7] text-fg-muted">
+            <div className="flex items-center gap-3">
+              {(() => {
+                const Icon = modelIcons[lifeModel.outcome.icon as ModelIconKey];
+                return (
+                  <span
+                    className="inline-flex size-10 shrink-0 items-center justify-center rounded-full"
+                    style={{
+                      backgroundColor: `color-mix(in srgb, var(${lifeModel.outcome.colorVar}) 14%, transparent)`,
+                      color: `var(${lifeModel.outcome.colorVar})`,
+                    }}
+                  >
+                    <Icon className="size-6" />
+                  </span>
+                );
+              })()}
+              <h3
+                className="font-display text-[17px] font-bold leading-snug"
+                style={{ color: `var(${lifeModel.outcome.colorVar})` }}
+              >
+                {lifeModel.outcome.title}
+              </h3>
+            </div>
+            <p className="mt-3 text-[13.5px] leading-[1.7] text-fg-muted">
               {lifeModel.outcome.body}
             </p>
           </div>

@@ -43,7 +43,7 @@ export function Header() {
         <Logo size="sm" />
 
         {/* ---- Masaustu menu: ikon ustte, etiket altta ---- */}
-        <nav aria-label="Ana menü" className="hidden lg:block">
+        <nav aria-label="Ana menü" className="hidden xl:block">
           <ul className="flex items-stretch gap-1.5">
             {mainNav.map((item) => {
               const active = isActive(pathname, item.href);
@@ -54,7 +54,7 @@ export function Header() {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "relative flex h-full w-[5.5rem] flex-col items-center justify-start gap-1.5 rounded-xl",
+                      "relative flex h-full w-[5.1rem] flex-col items-center justify-start gap-1.5 rounded-xl",
                       "border px-2 pb-2.5 pt-2.5 text-center transition-colors",
                       active
                         ? "border-border-strong bg-surface text-primary shadow-sm"
@@ -88,7 +88,7 @@ export function Header() {
             aria-label="Menüyü aç"
             aria-expanded={open}
             aria-controls="mobil-menu"
-            className="inline-flex size-10 items-center justify-center rounded-full border border-border text-fg-muted transition-colors hover:bg-bg-subtle hover:text-ink lg:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-full border border-border text-fg-muted transition-colors hover:bg-bg-subtle hover:text-ink xl:hidden"
           >
             <Menu className="size-5" aria-hidden />
           </button>
@@ -97,7 +97,7 @@ export function Header() {
 
       {/* ---- Mobil menu ---- */}
       {open && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div className="fixed inset-0 z-50 xl:hidden">
           <button
             type="button"
             aria-label="Menüyü kapat"

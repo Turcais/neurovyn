@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/page-shell";
 import { SectionHeading } from "@/components/ui/section";
-import { approachClosing, lifeCycle } from "@/lib/content";
+import { approachClosing, lifeCycle, lifeCycleLead } from "@/lib/content";
 import { lifeAreas } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function ApproachPage() {
       <SectionHeading
         eyebrow="Neurovyn Yaşam Döngüsü"
         title="Nasıl çalışıyoruz?"
-        lead="Değerlendirme, planlama, uygulama ve takip eden döngüsel çalışma modelimizdir. Döngü biter değil, döner: her tur bir öncekinin üzerine kurulur."
+        lead={lifeCycleLead}
       />
 
       <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
