@@ -2,62 +2,49 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * Neurovyn yasam agaci — musterinin gercek marka gorseli.
+ * Neurovyn yasam agaci — musterinin onayladigi logo gorseli.
  *
- * Iki surum de render edilir, dogrusu CSS ile gosterilir; boylece
- * tema anahtari aninda calisir ve sunucu/istemci ciktisi ayni kalir.
- * Iki dosya ayni en-boy oranindadir, tema degisiminde yer degistirmez.
+ * Gorsel kendi koyu zemininde, yuvarlak bir panel icinde durur. Boylece
+ * hem acik hem koyu temada aynı sekilde net gorunur; arka plan silme
+ * islemi yapilmadigi icin tacta ve isik halkasinda hicbir bozulma olmaz.
+ * Gorselin kenarlari panele karisacak sekilde yumusatilmistir.
  */
 
 const ALT =
-  "Neurovyn yaşam ağacı: sol yarısı mor (zihin), sağ yarısı yeşil (ekosistem), altın gövde ve geniş kökleriyle beyin biçimli ağaç";
+  "Neurovyn yaşam ağacı: sol yarısı mor (zihin), sağ yarısı yeşil (ekosistem), altın gövde ve kökleriyle beyin biçimli ağaç, çevresinde ekosistem çemberi";
 
 export function BrandTreeImage({
   className,
   priority = false,
   decorative = false,
   sizes = "(min-width: 1024px) 40vw, 90vw",
-  variant = "auto",
+  /** false verilirse panel cizilmez, gorsel dogrudan yerlesir */
+  panel = true,
 }: {
   className?: string;
   priority?: boolean;
-  /** true ise ekran okuyuculardan gizlenir */
   decorative?: boolean;
   sizes?: string;
-  /** "auto" temaya uyar; footer gibi her zaman koyu yuzeylerde "dark" kullanin */
-  variant?: "auto" | "light" | "dark";
+  panel?: boolean;
 }) {
-  const alt = decorative ? "" : ALT;
-
-  const lightImage = (
-    <Image
-      src="/marka/agac-acik.webp"
-      alt={alt}
-      width={540}
-      height={619}
-      sizes={sizes}
-      priority={priority}
-      className={cn("h-auto w-full", variant === "auto" && "dark:hidden")}
-    />
-  );
-
-  const darkImage = (
-    <Image
-      src="/marka/agac-koyu.webp"
-      alt={variant === "dark" ? alt : ""}
-      aria-hidden={variant === "dark" ? undefined : true}
-      width={560}
-      height={642}
-      sizes={sizes}
-      priority={priority}
-      className={cn("h-auto w-full", variant === "auto" && "hidden dark:block")}
-    />
-  );
-
   return (
-    <div className={cn("relative", className)}>
-      {variant !== "dark" && lightImage}
-      {variant !== "light" && darkImage}
+    <div
+      className={cn(
+        "relative overflow-hidden",
+        panel && "rounded-[2rem] bg-[#05070f] p-4 ring-1 ring-white/10 sm:p-6",
+        className,
+      )}
+    >
+      <Image
+        src="/marka/agac-logo.webp"
+        alt={decorative ? "" : ALT}
+        aria-hidden={decorative || undefined}
+        width={900}
+        height={1025}
+        sizes={sizes}
+        priority={priority}
+        className="h-auto w-full"
+      />
     </div>
   );
 }

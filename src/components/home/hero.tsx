@@ -47,7 +47,7 @@ export function Hero() {
           </div>
         </div>
 
-        <BrandTreeImage priority className="mx-auto w-full max-w-[30rem] lg:max-w-none" />
+        <BrandTreeImage priority className="mx-auto w-full max-w-[27rem] lg:max-w-[32rem]" />
       </div>
     </section>
   );

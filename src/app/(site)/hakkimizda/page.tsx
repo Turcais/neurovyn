@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MoveRight } from "lucide-react";
 import { PageShell } from "@/components/layout/page-shell";
+import { BrandTreeImage } from "@/components/brand/tree-image";
 import { ButtonLink } from "@/components/ui/button";
 import { Prose, PullQuote, SectionHeading } from "@/components/ui/section";
 import { founderStory, logoMeaning } from "@/lib/content";
@@ -102,7 +103,14 @@ export default function AboutPage() {
           lead="Logodaki her öge, Neurovyn'in nasıl düşündüğünü anlatan bir karşılığa sahiptir."
         />
 
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 lg:grid-cols-[22rem_1fr] lg:gap-12">
+          <BrandTreeImage
+            decorative
+            sizes="(min-width: 1024px) 22rem, 90vw"
+            className="mx-auto w-full max-w-[22rem]"
+          />
+
+          <ul className="grid gap-3 sm:grid-cols-2">
           {logoMeaning.map((item) => (
             <li key={item.symbol} className="rounded-2xl border border-border bg-surface p-6">
               <span
@@ -119,7 +127,8 @@ export default function AboutPage() {
               <p className="mt-2 text-[13.5px] leading-[1.7] text-fg-muted">{item.meaning}</p>
             </li>
           ))}
-        </ul>
+          </ul>
+        </div>
       </section>
 
       <div className="mt-14 flex flex-wrap gap-4">

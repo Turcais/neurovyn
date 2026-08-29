@@ -11,7 +11,7 @@ function FooterFlourish() {
       className="pointer-events-none absolute -bottom-24 -right-16 hidden w-[24rem] opacity-30 md:block"
       aria-hidden
     >
-      <BrandTreeImage decorative variant="dark" sizes="24rem" />
+      <BrandTreeImage decorative panel={false} sizes="24rem" />
     </div>
   );
 }
