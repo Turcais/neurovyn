@@ -28,7 +28,7 @@ export const siteSettings = defineType({
       title: "Alt başlık",
       type: "string",
       group: "marka",
-      initialValue: "Nöroyaşam Tasarımı",
+      initialValue: "Ekosistem Temelli Nöroyaşam Tasarımı",
       description: "Logonun altında görünen ifade.",
     }),
     defineField({

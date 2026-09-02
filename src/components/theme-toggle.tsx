@@ -8,18 +8,28 @@ import { cn } from "@/lib/utils";
  * Tema anahtari.
  * Iki ikonu da render edip dogrusunu CSS ile gosteririz; boylece
  * sunucu ve istemci ciktisi ayni kalir ve "mounted" durumu gerekmez.
+ *
+ * Hedef temayi next-themes'in resolvedTheme'i yerine <html> uzerindeki
+ * sinifitan okuyoruz: resolvedTheme ilk mount'ta undefined olabiliyor ve
+ * o durumda ilk tiklama gorunurde hicbir sey yapmiyordu.
  */
 export function ThemeToggle({ className }: { className?: string }) {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
+
+  const toggle = () => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "light" : "dark");
+  };
 
   return (
     <button
       type="button"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      onClick={toggle}
       aria-label="Temayı değiştir"
       title="Temayı değiştir"
       className={cn(
-        "inline-flex size-10 items-center justify-center rounded-full border border-border",
+        "relative z-10 inline-flex size-10 shrink-0 cursor-pointer items-center justify-center",
+        "rounded-full border border-border",
         "text-fg-muted transition-colors hover:bg-bg-subtle hover:text-ink",
         className,
       )}

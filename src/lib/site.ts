@@ -34,7 +34,7 @@ import { InstagramIcon, LinkedInIcon, YouTubeIcon } from "@/components/brand/soc
 
 export const site = {
   name: "Neurovyn",
-  tagline: "Nöroyaşam Tasarımı",
+  tagline: "Ekosistem Temelli Nöroyaşam Tasarımı",
   sloganLead: "Bilimle anlarız",
   sloganTail: "Birlikte tasarlarız",
   url: "https://neurovyn.com.tr",

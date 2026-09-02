@@ -16,8 +16,8 @@ type LogoProps = {
 };
 
 const sizes = {
-  sm: { word: "text-[22px] sm:text-[26px]", mark: "size-[21px] sm:size-[25px]", tag: "text-[11px] sm:text-[12px]" },
-  lg: { word: "text-5xl sm:text-6xl lg:text-7xl", mark: "size-[46px] sm:size-[56px] lg:size-[67px]", tag: "text-xl sm:text-2xl" },
+  sm: { word: "text-[22px] sm:text-[26px]", mark: "size-[21px] sm:size-[25px]", tag: "text-[10.5px] sm:text-[12px]" },
+  lg: { word: "text-5xl sm:text-6xl lg:text-7xl", mark: "size-[46px] sm:size-[56px] lg:size-[67px]", tag: "text-lg sm:text-xl lg:text-2xl" },
 } as const;
 
 export function Logo({ size = "sm", withTagline = true, asLink = true, tone = "default", className }: LogoProps) {
@@ -46,7 +46,7 @@ export function Logo({ size = "sm", withTagline = true, asLink = true, tone = "d
       {withTagline && (
         <span
           className={cn(
-            "mt-0.5 font-display font-medium tracking-tight",
+            "mt-0.5 text-balance font-display font-medium leading-tight tracking-tight",
             tone === "onDark" ? "text-footer-muted" : "text-primary",
             s.tag,
           )}

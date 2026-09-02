@@ -5,7 +5,6 @@ import { BrandTreeImage } from "@/components/brand/tree-image";
 import { ButtonLink } from "@/components/ui/button";
 import { Prose, PullQuote, SectionHeading } from "@/components/ui/section";
 import { founderStory, logoMeaning } from "@/lib/content";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
@@ -57,13 +56,11 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
+            {/* Isim en altta imza blogunda yer aliyor; burada tekrar edilmiyor. */}
+            <h2 className="font-display text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
               Kurucu
-            </p>
-            <h2 className="mt-3 font-display text-[24px] font-bold sm:text-[28px]">
-              {site.founder}
             </h2>
-            <div className="prose-measure mt-5 space-y-4">
+            <div className="prose-measure mt-6 space-y-4">
               {founderStory.bio.map((paragraph) => (
                 <p key={paragraph} className="text-[15px] leading-[1.85] text-fg-muted">
                   {paragraph}
