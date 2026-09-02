@@ -102,7 +102,8 @@ export async function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs text-footer-muted">
-            © {year} {settings.brandName}. Tüm hakları saklıdır.
+            © {year} {settings.brandName}. Tüm hakları saklıdır. | Coded By <a href="https://web.2187labs.com" target="_blank" rel="noopener noreferrer"><strong>2187 LABS</strong></a>
+
           </p>
         </div>
       </div>
