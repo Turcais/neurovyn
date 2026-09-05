@@ -12,6 +12,7 @@ export const siteSettings = defineType({
     { name: "marka", title: "Marka" },
     { name: "iletisim", title: "İletişim" },
     { name: "sosyal", title: "Sosyal Medya" },
+    { name: "kurucu", title: "Kurucu" },
     { name: "seo", title: "SEO" },
   ],
   fields: [
@@ -130,6 +131,55 @@ export const siteSettings = defineType({
           preview: { select: { title: "platform", subtitle: "url" } },
         },
       ],
+    }),
+
+    defineField({
+      name: "founderPhoto",
+      title: "Kurucu fotoğrafı",
+      type: "image",
+      group: "kurucu",
+      options: { hotspot: true },
+      description:
+        "Hakkımızda sayfasındaki kurucu bölümünde görünür. Kare veya dikey bir fotoğraf en iyi sonucu verir. Yüklemezseniz o alan boş bırakılır.",
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Görsel açıklaması",
+          type: "string",
+          description: "Görmeyen kullanıcılar için: fotoğrafta kim var? Örnek: \"Ebru Şahin Mercimek portresi\".",
+          validation: (rule) => rule.required(),
+        }),
+      ],
+    }),
+    defineField({
+      name: "founderName",
+      title: "Kurucu adı",
+      type: "string",
+      group: "kurucu",
+      initialValue: "Ebru Şahin Mercimek",
+    }),
+    defineField({
+      name: "founderRole",
+      title: "Kurucu ünvanı",
+      type: "string",
+      group: "kurucu",
+      initialValue: "Neurovyn Kurucusu & Nöroyaşam Tasarımcısı",
+    }),
+    defineField({
+      name: "founderCredentials",
+      title: "Kurucu yeterlilikleri",
+      type: "string",
+      group: "kurucu",
+      description: "İsmin altında küçük puntoda görünür.",
+      initialValue: "Dr. Mimar · ICF Koçluk · Psikoloji Öğrencisi",
+    }),
+    defineField({
+      name: "founderNote",
+      title: "İmza üstü cümle",
+      type: "text",
+      rows: 3,
+      group: "kurucu",
+      description: "İsmin hemen üstünde italik duran özet cümle.",
     }),
 
     defineField({

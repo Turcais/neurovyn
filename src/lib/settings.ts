@@ -4,6 +4,7 @@ import { Globe, Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon, LinkedInIcon, YouTubeIcon } from "@/components/brand/social-icons";
 import { sanityFetch } from "@/sanity/client";
 import { siteSettingsQuery } from "@/sanity/queries";
+import { founderStory } from "./content";
 import { contact, site, socialLinks as defaultSocialLinks } from "./site";
 
 /**
@@ -25,7 +26,20 @@ type SanitySettings = {
   whatsappMessage?: string;
   address?: string;
   seoDescription?: string;
+  founderPhoto?: { asset?: { _ref: string }; alt?: string };
+  founderName?: string;
+  founderRole?: string;
+  founderCredentials?: string;
+  founderNote?: string;
   socialLinks?: { platform: string; url: string }[];
+};
+
+export type FounderInfo = {
+  photo?: { asset?: { _ref: string }; alt?: string };
+  name: string;
+  role: string;
+  credentials: string;
+  note: string;
 };
 
 /** Hem lucide ikonlari hem kendi SVG bilesenlerimiz bu tipe uyar. */
@@ -55,6 +69,7 @@ export type ResolvedSettings = {
   whatsappHref: string;
   contactLinks: ContactLink[];
   socialLinks: SocialLink[];
+  founder: FounderInfo;
 };
 
 const socialMeta: Record<string, { label: string; icon: SocialLink["icon"] }> = {
@@ -108,5 +123,12 @@ export async function getSettings(): Promise<ResolvedSettings> {
       { label: address, href: null, icon: MapPin },
     ],
     socialLinks: social,
+    founder: {
+      photo: cms?.founderPhoto?.asset ? cms.founderPhoto : undefined,
+      name: pick(cms?.founderName, founderStory.signature.name),
+      role: pick(cms?.founderRole, founderStory.signature.role),
+      credentials: pick(cms?.founderCredentials, founderStory.signature.credentials),
+      note: pick(cms?.founderNote, founderStory.signatureNote),
+    },
   };
 }

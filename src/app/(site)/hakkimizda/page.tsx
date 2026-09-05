@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { MoveRight } from "lucide-react";
 import { PageShell } from "@/components/layout/page-shell";
 import { BrandTreeImage } from "@/components/brand/tree-image";
 import { ButtonLink } from "@/components/ui/button";
 import { Prose, PullQuote, SectionHeading } from "@/components/ui/section";
 import { founderStory, logoMeaning } from "@/lib/content";
+import { getSettings } from "@/lib/settings";
+import { urlForImage } from "@/sanity/client";
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
   description: founderStory.lead,
 };
 
-export default function AboutPage() {
+export const revalidate = 3600;
+
+export default async function AboutPage() {
+  const { founder } = await getSettings();
+  const photoUrl = founder.photo ? urlForImage(founder.photo)?.width(640).height(800).fit("crop").url() : null;
+
   return (
     <PageShell cmsKey="hakkimizda" title="Neurovyn nasıl doğdu?" lead={founderStory.lead}>
       <Prose>
@@ -44,16 +52,18 @@ export default function AboutPage() {
 
       {/* Kurucu */}
       <section className="mt-20 rounded-2xl border border-border bg-bg-subtle p-8 sm:p-12">
-        <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:gap-12">
-          {/* TODO: musteriden kurucu fotografi gelince buraya yerlestirilecek. */}
-          <div
-            className="flex size-32 shrink-0 items-center justify-center rounded-2xl border border-dashed border-border-strong bg-surface text-center font-display text-[11px] font-semibold uppercase tracking-wider text-fg-faint lg:size-40"
-            aria-hidden
-          >
-            Fotoğraf
-            <br />
-            eklenecek
-          </div>
+        <div className={photoUrl ? "grid gap-8 lg:grid-cols-[auto_1fr] lg:gap-12" : ""}>
+          {/* Fotograf yonetim panelinden yuklenir; yoksa bu alan hic cizilmez. */}
+          {photoUrl && (
+            <Image
+              src={photoUrl}
+              alt={founder.photo?.alt ?? `${founder.name} portresi`}
+              width={640}
+              height={800}
+              sizes="(min-width: 1024px) 16rem, 10rem"
+              className="size-40 shrink-0 rounded-2xl border border-border object-cover lg:size-64"
+            />
+          )}
 
           <div>
             {/* Isim en altta imza blogunda yer aliyor; burada tekrar edilmiyor. */}
@@ -75,19 +85,19 @@ export default function AboutPage() {
         </p>
 
         <p className="prose-measure mt-7 text-[14px] italic leading-[1.8] text-fg-muted">
-          {founderStory.signatureNote}
+          {founder.note}
         </p>
 
         {/* İmza: ad en altta, ünvanlar altında küçük puntoda */}
         <div className="mt-9">
           <p className="font-display text-[18px] font-bold text-ink">
-            {founderStory.signature.name}
+            {founder.name}
           </p>
           <p className="mt-1 font-display text-[15px] font-semibold text-ink">
-            {founderStory.signature.role}
+            {founder.role}
           </p>
           <p className="mt-1.5 text-[13px] italic text-fg-muted">
-            {founderStory.signature.credentials}
+            {founder.credentials}
           </p>
         </div>
       </section>

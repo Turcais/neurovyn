@@ -37,6 +37,7 @@ export const siteSettingsQuery = groq`
     brandName, tagline, sloganLead, sloganTail, footerBlurb,
     email, phone, phoneHref, whatsapp, whatsappMessage, address,
     seoDescription,
+    founderPhoto, founderName, founderRole, founderCredentials, founderNote,
     socialLinks[]{ platform, url }
   }
 `;
